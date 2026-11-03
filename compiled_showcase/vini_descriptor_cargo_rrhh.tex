@@ -1,0 +1,243 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+% Tipografia Corporativa Oficial (Helvetica / Helvetica Neue + Courier Mono para datos)
+\usepackage[scaled=0.94]{helvet}
+\usepackage{courier}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{colortbl}
+\usepackage{enumitem}
+
+% Antigravity Corporate Brand Identity (Interchangeable: bnw, boletos, nodo, vini, wit)
+\usepackage[brand=vini]{../core/agy-corporate-brand}
+
+\geometry{
+  top=2.0cm,
+  bottom=1.8cm,
+  left=1.8cm,
+  right=1.8cm,
+  headheight=38pt,
+  headsep=12pt,
+  footskip=16pt
+}
+
+\begin{document}
+
+% ==================== PÁGINA 1: IDENTIFICACIÓN, MISIÓN Y ORGANIGRAMA ====================
+\setupcorporateheader{DESCRIPTOR DE CARGO \& PERFIL DE ROL}{COD: DC-RRHH-2026-088}
+
+\drawchromaticbar[3.5pt]
+\vspace{2.5mm}
+
+\noindent
+\begin{minipage}[t]{0.65\textwidth}
+  {\fontsize{16}{20}\selectfont\bfseries\color{corpPrimary}DESCRIPTOR DE CARGO EJECUTIVO}\\[2pt]
+  {\small\bfseries\color{corpTextAccent}LIDER DE ARQUITECTURA EDGE \& PLATAFORMAS DISTRIBUIDAS}\\[3pt]
+  {\footnotesize\color{corpTextMuted}Gerencia Corporativa de Tecnologia, Infraestructura \& Ciberseguridad}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.32\textwidth}
+  \raggedleft
+  \begin{tcolorbox}[
+    enhanced,
+    colback=corpLightBg,
+    colframe=corpBorder,
+    arc=2mm,
+    boxrule=0.7pt,
+    top=2mm, bottom=2mm, left=3mm, right=3mm
+  ]
+    \raggedleft
+    {\scriptsize\bfseries\color{corpTextMuted}CODIGO DE POSICION}\\[1pt]
+    {\normalsize\bfseries\color{corpPrimary}POS-ENG-2026-088}\\[2pt]
+    {\scriptsize\color{corpTextDark}Nivel: \textbf{Banda 4 (Lead/Staff)}}\\[1pt]
+    {\scriptsize\color{corpSuccess}\textbf{Vacante: Activa / Prioritaria}}
+  \end{tcolorbox}
+\end{minipage}
+
+\vspace{2mm}
+
+% Ficha del Puesto
+\noindent
+\begin{tcolorbox}[
+  enhanced,
+  colback=white,
+  colframe=corpBorder,
+  title={\small\bfseries\color{corpPrimary}FICHA GENERAL DE LA POSICION},
+  colbacktitle=corpLightBg,
+  arc=1.5mm,
+  boxrule=0.6pt,
+  top=2.5mm, bottom=2.5mm, left=3.5mm, right=3.5mm
+]
+  \noindent
+  \begin{tabularx}{\linewidth}{@{} l X l X @{}}
+    {\footnotesize\bfseries Titulo del Cargo:} & {\footnotesize Lider de Arquitectura Edge} &
+    {\footnotesize\bfseries Dependencia Directa:} & {\footnotesize VP de Tecnologia \& CTO} \\
+    {\footnotesize\bfseries Gerencia / Area:} & {\footnotesize Ingenieria \& Infraestructura} &
+    {\footnotesize\bfseries Personal a Cargo:} & {\footnotesize 6 Ingenieros Senior / Staff} \\
+    {\footnotesize\bfseries Banda Salarial:} & {\footnotesize Nivel Ejecutivo E-4 (Mercado)} &
+    {\footnotesize\bfseries Ubicacion / Sede:} & {\footnotesize Hibrido (Santiago / Remoto)} \\
+    {\footnotesize\bfseries Regimen Laboral:} & {\footnotesize Art. 22 inc. 2 / Plena Dedicacion} &
+    {\footnotesize\bfseries Cobertura Regional:} & {\footnotesize Operaciones Chile \& Paraguay} \\
+  \end{tabularx}
+\end{tcolorbox}
+
+\vspace{2mm}
+
+% Misión General del Cargo en corpcard
+\begin{corpcard}{Mision General y Proposito Estrategico del Rol}
+  Liderar la arquitectura, desarrollo, resiliencia y escalabilidad de las plataformas de computo perimetral (Edge Computing), pasarelas IoT y subsistemas de comunicacion vehicular. Garantizar la consistencia transaccional bajo estandares ACID/2PC, asegurar la disponibilidad del 99.95\% de los gateways de campo y coordinar la interoperabilidad segura con los servicios de facturacion electronica e-Kuatia (DNIT) y DTE (SII).
+\end{corpcard}
+
+\vspace{2mm}
+
+% Organigrama Jerárquico en TikZ nativo
+\noindent{\bfseries\color{corpPrimary}\small Estructura Jerarquica y Arbol de Reporte (Organigrama Corporativo)}
+\vspace{1mm}
+
+\noindent\begin{center}
+\begin{tikzpicture}[
+  scale=0.92, transform shape,
+  level 1/.style={sibling distance=4.5cm, level distance=1.4cm},
+  level 2/.style={sibling distance=3.6cm, level distance=1.5cm},
+  orgnode/.style={rectangle, rounded corners=3pt, draw=corpBorder, fill=corpLightBg, font=\sffamily\scriptsize, align=center, inner sep=4pt, line width=0.8pt, drop shadow={opacity=0.06, shadow xshift=1pt, shadow yshift=-1pt}},
+  bossnode/.style={rectangle, rounded corners=3pt, draw=corpPrimary, fill=corpPrimary, text=white, font=\sffamily\scriptsize\bfseries, align=center, inner sep=5pt},
+  focusnode/.style={rectangle, rounded corners=3pt, draw=corpTextAccent, fill=white, text=corpPrimary, font=\sffamily\scriptsize\bfseries, align=center, inner sep=5pt, line width=1.2pt},
+  subnode/.style={rectangle, rounded corners=2pt, draw=corpBorder, fill=white, font=\sffamily\tiny, align=center, inner sep=3pt}
+]
+  % Árbol de reporte
+  \node[bossnode] {Vicepresidencia Corporativa de Tecnologia \& CTO\\{\tiny [Comite de Direccion]}}
+    child {
+      node[orgnode] {Lider de Ciberseguridad\\\& Oficial CISO}
+    }
+    child {
+      node[focusnode] (focus) {LIDER DE ARQUITECTURA EDGE\\\& PLATAFORMAS DISTRIBUIDAS\\{\tiny [ESTA POSICION]}}
+      child { node[subnode] {Ingeniero Senior\\Firmware Edge} }
+      child { node[subnode] {Especialista Cloud\\\& Kafka Ingestion} }
+      child { node[subnode] {Site Reliability\\Engineer (SRE)} }
+    }
+    child {
+      node[orgnode] {Lider de Sistemas Comerciales\\\& Facturacion DTE/SIFEN}
+    };
+
+\end{tikzpicture}
+\end{center}
+
+\clearpage
+
+% ==================== PÁGINA 2: RESPONSABILIDADES, KPIS, PERFIL Y APROBACIONES ====================
+\setupcorporateheader{DESCRIPTOR DE CARGO \& PERFIL DE ROL}{COD: DC-RRHH-2026-088}
+
+\drawchromaticbar[3.5pt]
+\vspace{2.5mm}
+
+% Matriz de Responsabilidades y Funciones Clave
+\noindent{\bfseries\color{corpPrimary}\small Matriz de Responsabilidades Principales y Funciones Clave}
+\vspace{1mm}
+
+\noindent
+\begin{tabularx}{\linewidth}{@{} p{3.2cm} X c @{}}
+  \toprule
+  \rowcolor{corpPrimary}
+  {\bfseries\color{white}\scriptsize Dimension Funcional} &
+  {\bfseries\color{white}\scriptsize Descripcion de Responsabilidades y Entregables Clave} &
+  {\bfseries\color{white}\scriptsize Frecuencia} \\
+  \midrule
+  \rowcolor{corpLightBg}
+  Arquitectura \& Diseno & Disenar patrones de computo distribuido tolerante a particiones (CAP/PACELC) y coordinar el protocolo 2PC para conciliacion fiscal y transaccional. & Diaria \\
+  Gestion de Equipo & Planificar sprints, revisiones de diseno tecnico (RFCs), mentoria del equipo de ingenieria y seguimiento de deuda tecnica en repositorios Git. & Semanal \\
+  \rowcolor{corpLightBg}
+  Operaciones \& SLA & Monitorear tableros de rendimiento en tiempo real, latencias de transmision CAN-Bus y disponibilidad de enlaces VPN WireGuard de gateways edge. & Diaria \\
+  Gobernanza \& Compliance & Validar sellos criptograficos SHA-256 en logs de auditoria WORM y asegurar cumplimiento de normativas de facturacion SII (Chile) y DNIT (Paraguay). & Mensual \\
+  \bottomrule
+\end{tabularx}
+
+\vspace{2.5mm}
+
+% Matriz de KPIs / Indicadores de Desempeño
+\noindent{\bfseries\color{corpPrimary}\small Matriz de KPIs e Indicadores de Desempeno (Metricas de Evaluacion)}
+\vspace{1mm}
+
+\noindent
+\begin{tabularx}{\linewidth}{@{} p{4.2cm} c c X @{}}
+  \toprule
+  \rowcolor{corpPrimary}
+  {\bfseries\color{white}\scriptsize Indicador Clave (KPI)} &
+  {\bfseries\color{white}\scriptsize Meta Anual} &
+  {\bfseries\color{white}\scriptsize Ponderacion} &
+  {\bfseries\color{white}\scriptsize Metodo de Medicion y Fuente de Datos} \\
+  \midrule
+  \rowcolor{corpLightBg}
+  Disponibilidad Red Gateways Edge & $\ge 99.95\%$ & 30\% & Uptime telemetrico consolidado en Prometheus / Grafana. \\
+  Latencia Protocolo 2PC Sub-segundo & $\le 350$ ms & 25\% & Percentil 99 en pasarela transaccional de produccion. \\
+  \rowcolor{corpLightBg}
+  Tasa de Exito SIFEN / DTE & $\ge 99.98\%$ & 25\% & Emisiones validadas sin errores ante SII y DNIT. \\
+  Eficiencia de Costos Infraestructura & $-10\%$ CAPEX & 20\% & Auditoria FinOps semestral sobre consumo y hardware. \\
+  \bottomrule
+\end{tabularx}
+
+\vspace{2.5mm}
+
+% Perfil del Candidato: Formación, Experiencia y Competencias
+\noindent{\bfseries\color{corpPrimary}\small Perfil del Postulante: Requisitos Academicos, Experiencia y Competencias}
+\vspace{1mm}
+
+\noindent
+\begin{tabularx}{\linewidth}{@{}XX@{}}
+  \begin{tcolorbox}[
+    enhanced,
+    colback=white,
+    colframe=corpBorder,
+    title={\scriptsize\bfseries\color{corpPrimary}FORMACION Y EXPERIENCIA EXIGIDA},
+    colbacktitle=corpLightBg,
+    arc=1.5mm,
+    boxrule=0.6pt,
+    top=2mm, bottom=2mm, left=3mm, right=3mm
+  ]
+    \begin{itemize}[leftmargin=*, noitemsep, topsep=1pt]
+      {\scriptsize
+      \item \textbf{Titulo Profesional:} Ingenieria Civil en Informatica, Telecomunicaciones, Electronica o afines.
+      \item \textbf{Postgrado:} Deseable Magister en Sistemas Distribuidos, Cloud Computing o Ciberseguridad.
+      \item \textbf{Experiencia Minima:} 6+ anos en diseno de infraestructura critica, telemetria IoT o pasarelas de pago.
+      \item \textbf{Idiomas:} Ingles tecnico avanzado (C1/B2 certificado).}
+    \end{itemize}
+  \end{tcolorbox}
+  &
+  \begin{tcolorbox}[
+    enhanced,
+    colback=white,
+    colframe=corpBorder,
+    title={\scriptsize\bfseries\color{corpPrimary}COMPETENCIAS TECNICAS Y DE LIDERAZGO},
+    colbacktitle=corpLightBg,
+    arc=1.5mm,
+    boxrule=0.6pt,
+    top=2mm, bottom=2mm, left=3mm, right=3mm
+  ]
+    \begin{itemize}[leftmargin=*, noitemsep, topsep=1pt]
+      {\scriptsize
+      \item \textbf{Tecnologias:} Linux Kernel/Embebido, C/C++, Rust, Go, Python, Docker, Kubernetes Edge (K3s).
+      \item \textbf{Criptografia:} PKI, SHA-256, HSM, TLS 1.3, WireGuard.
+      \item \textbf{Liderazgo:} Gestion de equipos multidisciplinarios, comunicacion ejecutiva y capacidad de negociacion.
+      \item \textbf{Resolucion de Problemas:} Analisis de causa raiz (RCA).}
+    \end{itemize}
+  \end{tcolorbox}
+\end{tabularx}
+
+\vspace{2mm}
+
+% Aprobaciones de RRHH y Gerencia
+\dualcontrolsignature%
+  {Ps. Valentina Alarcon Saavedra}{Gerente Corporativo de Gestion de Personas}{Validacion Estructura Salarial \& RRHH}%
+  {Ing. Rodrigo Morales P.}{Vicepresidente de Tecnologia \& CTO}{Aprobacion Tecnica del Perfil de Cargo}
+
+\vspace{2mm}
+
+% Sello Criptográfico SHA-256
+\cryptoseal%
+  {3b8e714f82d1c94029415712e5a48d3bc6793f18b3d0e42718501e5c8369ba02}%
+  {2026-11-03T12:55:00.000Z}%
+  {BNW-HR-ROLE-SPECIFICATION-SHA256-AUTH}
+
+\end{document}

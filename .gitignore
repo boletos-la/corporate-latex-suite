@@ -1,0 +1,21 @@
+# LaTeX intermediate files
+*.aux
+*.log
+*.out
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.bbl
+*.blg
+
+# Python cache
+__pycache__/
+*.py[cod]
+.coverage
+coverage.json
+.pytest_cache/
+
+# OS files
+.DS_Store
+Thumbs.db

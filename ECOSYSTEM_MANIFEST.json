@@ -1,0 +1,316 @@
+{
+  "manifest_version": "2.0.0",
+  "name": "BNW Corporate LaTeX Suite",
+  "generated_at": "2026-11-03T10:00:00Z",
+  "target_root": "C:\\Users\\ivanv\\Templates Latex\\CORPORATE_SUITE",
+  "author": "BNW Corporate Group / Antigravity Engineering",
+  "classification": "Production Architectural Ecosystem",
+  "file_catalog": {
+    "compiled_showcase/agy-corporate-brand.sty": {
+      "size_bytes": 16389,
+      "sha256": "b1c16ce0a97a22e2abfc2af9ca2e55e224b3c5dbde6ca05179c2a28d627f8f1c"
+    },
+    "compiled_showcase/bnw_informe_ejecutivo_auditoria_360.pdf": {
+      "size_bytes": 417244,
+      "sha256": "0da5e9e7ad771ee06e65e0e40b0ca68b78a3f6eda66f882e78433d6939749e2d"
+    },
+    "compiled_showcase/bnw_informe_ejecutivo_auditoria_360.tex": {
+      "size_bytes": 12852,
+      "sha256": "8633aec8e3abbebc7f4fe8ea7ce785d50160567aae3fc97b87e8586e4365019e"
+    },
+    "compiled_showcase/bnw_memorandum_politica_interna.pdf": {
+      "size_bytes": 375800,
+      "sha256": "95e3d664c44d6ee32967f90246aab63cbe8aca2949e1f1eb7825059d01da9ffa"
+    },
+    "compiled_showcase/bnw_memorandum_politica_interna.tex": {
+      "size_bytes": 12696,
+      "sha256": "7a478fcd764a0f656befa2a7d6e754d9821fbdda10e168dce3d70128427579c9"
+    },
+    "compiled_showcase/boletos_minuta_ejecutiva_directorio.pdf": {
+      "size_bytes": 106884,
+      "sha256": "7041c4b6402e093f27593762b9980dc86a7d6ebf875fdb3bb8313aefa164341d"
+    },
+    "compiled_showcase/boletos_minuta_ejecutiva_directorio.tex": {
+      "size_bytes": 9294,
+      "sha256": "32aff7211fa5909d8c886e2ab303096b7c9ce1a57cb6b74c6d7c2d135f412613"
+    },
+    "compiled_showcase/boletos_orden_compra_cotizacion.pdf": {
+      "size_bytes": 107902,
+      "sha256": "8a480d766b638cb50ad6b1f6fd895cf591e474c3477bf9a0a27e33e9ccf9191b"
+    },
+    "compiled_showcase/boletos_orden_compra_cotizacion.tex": {
+      "size_bytes": 9384,
+      "sha256": "708e335234d6de1bad31a5d8ea2863b55a96dd2502251da32bbd54f57afc1e65"
+    },
+    "compiled_showcase/nodo_acta_recepcion_conformidad_sla.pdf": {
+      "size_bytes": 236511,
+      "sha256": "491e66546d8ae99537365c732620169eeac35da7ebfc91539044db034510091a"
+    },
+    "compiled_showcase/nodo_acta_recepcion_conformidad_sla.tex": {
+      "size_bytes": 12630,
+      "sha256": "0f374915d166de02805ef5089c2884f52b07a103247fe43632e726a3a2645022"
+    },
+    "compiled_showcase/nodo_diagramas_flujo_procesos_sop.pdf": {
+      "size_bytes": 182104,
+      "sha256": "73b1548247e78dc078bc7fc29095eb024f4eb9a1730b62a3982a3e4088330887"
+    },
+    "compiled_showcase/nodo_diagramas_flujo_procesos_sop.tex": {
+      "size_bytes": 16632,
+      "sha256": "80c26a890ecc3bd4e1e4585bf037d05f1d2dff9347bc216e6bae7a4c965b3456"
+    },
+    "compiled_showcase/vini_descriptor_cargo_rrhh.pdf": {
+      "size_bytes": 141413,
+      "sha256": "697283268dda47ee08d2660adc2a1acc14a283ae8a7ce6c23204fa474faaf280"
+    },
+    "compiled_showcase/vini_descriptor_cargo_rrhh.tex": {
+      "size_bytes": 10590,
+      "sha256": "97fec43e20c03bed56cfb57e5505cfee6d7f83bff8c330ff075f5b4bfbadadbe"
+    },
+    "compiled_showcase/wit_propuesta_comercial_licitacion.pdf": {
+      "size_bytes": 231473,
+      "sha256": "d9f18c5039639d45487271117b6e280c40a9598719cc0c404919d94e5f7eecff"
+    },
+    "compiled_showcase/wit_propuesta_comercial_licitacion.tex": {
+      "size_bytes": 11256,
+      "sha256": "46c48e5ef19d2b759f78f7b4d18f5ff003634523e173525680e66a7e2122ff7b"
+    },
+    "core/agy-corporate-brand.sty": {
+      "size_bytes": 16389,
+      "sha256": "b1c16ce0a97a22e2abfc2af9ca2e55e224b3c5dbde6ca05179c2a28d627f8f1c"
+    },
+    "scripts/build_all_brands.py": {
+      "size_bytes": 5840,
+      "sha256": "1e7536232fca6fa6969c7b7c8afac01079a77a9870560b4b6713891e4744c2cb"
+    },
+    "templates/01_orden_compra_cotizacion.pdf": {
+      "size_bytes": 346754,
+      "sha256": "4d62d169ce228848f271c622fe497d273a6e067b379282fbe396814aed6d4039"
+    },
+    "templates/01_orden_compra_cotizacion.tex": {
+      "size_bytes": 9380,
+      "sha256": "1dd05571f544ab7327dec945db70191fbb416e5e1c757be8c2408665b0abaa54"
+    },
+    "templates/02_minuta_ejecutiva_directorio.pdf": {
+      "size_bytes": 345834,
+      "sha256": "373981eee3fbdd8bc71951ac7ee146600bbea52739ea81d4633800a24baeeab6"
+    },
+    "templates/02_minuta_ejecutiva_directorio.tex": {
+      "size_bytes": 9290,
+      "sha256": "2c753b6e0305cd8c8f8a04f82703bb6aeee1b556df87678fb092b31bb3973aef"
+    },
+    "templates/03_diagramas_flujo_y_procesos_sop.pdf": {
+      "size_bytes": 356493,
+      "sha256": "b316e612bdb21d662f8c0007991919adec15a999484b7675b8c9771177f53bc4"
+    },
+    "templates/03_diagramas_flujo_y_procesos_sop.tex": {
+      "size_bytes": 16631,
+      "sha256": "12253a65075ff1611e712540fd40ff5e2482069fe4632cd53c0940978ca6ecc8"
+    },
+    "templates/04_descriptor_cargo_rrhh.pdf": {
+      "size_bytes": 375218,
+      "sha256": "811c5ffb0c2cd1c79e3479daab44f3734d702b22d44fd98b321f7d8ad64aa13a"
+    },
+    "templates/04_descriptor_cargo_rrhh.tex": {
+      "size_bytes": 10589,
+      "sha256": "18b065280ade50f08758413fcae98211b98e4c7b4e69abeb803bda3af0b5c86e"
+    },
+    "templates/05_informe_ejecutivo_auditoria_360.pdf": {
+      "size_bytes": 417244,
+      "sha256": "bf5eb6afb8dd9b96765ad411236cf42ccdb22f821ee4252b8c08d2ab008100a0"
+    },
+    "templates/05_informe_ejecutivo_auditoria_360.tex": {
+      "size_bytes": 12852,
+      "sha256": "8633aec8e3abbebc7f4fe8ea7ce785d50160567aae3fc97b87e8586e4365019e"
+    },
+    "templates/06_propuesta_comercial_licitacion.pdf": {
+      "size_bytes": 367384,
+      "sha256": "f12d9221f635142d83fcc3552ffcbfb171f647e2b4a264057795d9b593b2f1e5"
+    },
+    "templates/06_propuesta_comercial_licitacion.tex": {
+      "size_bytes": 11256,
+      "sha256": "51a26bbe0fe3133421329242ad99151a9d8ee6095732e32fc8011be4d996e9fd"
+    },
+    "templates/07_acta_recepcion_conformidad_sla.pdf": {
+      "size_bytes": 411558,
+      "sha256": "e0bbc3ee0c18bafcce5fc6f4b4eba95eaa3aec624b4997e367f8d77687e257c9"
+    },
+    "templates/07_acta_recepcion_conformidad_sla.tex": {
+      "size_bytes": 12629,
+      "sha256": "69cc144ee5bdb7b79127b96bb1bc21bbd32dab6ddaa0bc33abbe9e6f9fff4c9c"
+    },
+    "templates/08_memorandum_politica_interna.pdf": {
+      "size_bytes": 375800,
+      "sha256": "17a69173997f187c90fc1034e1745a40785fd286f050d2209246eebf6bceb6bc"
+    },
+    "templates/08_memorandum_politica_interna.tex": {
+      "size_bytes": 12696,
+      "sha256": "7a478fcd764a0f656befa2a7d6e754d9821fbdda10e168dce3d70128427579c9"
+    }
+  },
+  "environment": {
+    "os": "Windows 11 x64",
+    "shell": "PowerShell 5.1 (powershell.exe)",
+    "filesystem": "NTFS",
+    "encoding": "UTF-8"
+  },
+  "runtime": {
+    "python_lite": {
+      "path": "F:\\python_lite\\python.exe",
+      "version": "3.13.12"
+    }
+  },
+  "features": [
+    {
+      "id": "F1_BRAND_CORE",
+      "name": "Corporate Multi-Brand Core Package",
+      "milestone": "M1",
+      "status": "VERIFIED_PRODUCTION",
+      "description": "Parametric brand package for BNW, Boletos, Nodo, VINI, WIT with dual-control, cryptoseal, chromatic bars",
+      "deliverables": [
+        "core/agy-corporate-brand.sty"
+      ],
+      "deliverable_metadata": {
+        "core/agy-corporate-brand.sty": {
+          "exists": true,
+          "size_bytes": 16032,
+          "sha256": "becc0c1dff3b0920c5175da34ce18efc90cbf1b0b9a072a3ccd5dd9cae77d3ab"
+        }
+      }
+    },
+    {
+      "id": "F2_OPERATIONAL_TEMPLATES",
+      "name": "Operational Templates 01 to 04",
+      "milestone": "M1",
+      "status": "VERIFIED_PRODUCTION",
+      "description": "OC Cotizacion, Minuta Directorio, SOP Flujos TikZ, Descriptor Cargo RRHH",
+      "deliverables": [
+        "templates/01_orden_compra_cotizacion.tex",
+        "templates/02_minuta_ejecutiva_directorio.tex",
+        "templates/03_diagramas_flujo_y_procesos_sop.tex",
+        "templates/04_descriptor_cargo_rrhh.tex"
+      ],
+      "deliverable_metadata": {
+        "templates/01_orden_compra_cotizacion.tex": {
+          "exists": true,
+          "size_bytes": 8994,
+          "sha256": "5aacdee20c688c49654b2913b432a1d41fa7bf37dfeed37ddfad67b60e507d12"
+        },
+        "templates/02_minuta_ejecutiva_directorio.tex": {
+          "exists": true,
+          "size_bytes": 8916,
+          "sha256": "45741dd9b44d79a1f62139c6a981ebab2199333e6b16c8fe2893cd6c0a9c8b69"
+        },
+        "templates/03_diagramas_flujo_y_procesos_sop.tex": {
+          "exists": true,
+          "size_bytes": 16133,
+          "sha256": "2dda2cd51ce7f58b81312ac24034df1f2005b5cc0dd58e5a4730465ff85fff69"
+        },
+        "templates/04_descriptor_cargo_rrhh.tex": {
+          "exists": true,
+          "size_bytes": 10183,
+          "sha256": "dc44df1739b81137b8bf4845e70a3b83d05f9a4d814ae64c6b63a7a0a00cca9e"
+        }
+      }
+    },
+    {
+      "id": "F3_STRATEGIC_TEMPLATES",
+      "name": "Strategic Templates 05 to 08",
+      "milestone": "M1",
+      "status": "VERIFIED_PRODUCTION",
+      "description": "Informe Auditoria 360, Propuesta Comercial RFP, Acta Recepcion SLA, Memorandum Politica",
+      "deliverables": [
+        "templates/05_informe_ejecutivo_auditoria_360.tex",
+        "templates/06_propuesta_comercial_licitacion.tex",
+        "templates/07_acta_recepcion_conformidad_sla.tex",
+        "templates/08_memorandum_politica_interna.tex"
+      ],
+      "deliverable_metadata": {
+        "templates/05_informe_ejecutivo_auditoria_360.tex": {
+          "exists": true,
+          "size_bytes": 12415,
+          "sha256": "9c76c61cedcd493cf47369ee275d5e15e9a2f4dc997c0604a9ba806e4401b962"
+        },
+        "templates/06_propuesta_comercial_licitacion.tex": {
+          "exists": true,
+          "size_bytes": 10845,
+          "sha256": "b65b47e3e62ee9099087b6536f7cbb9d31d89c1a7b837bb77e4563d7624ce7d6"
+        },
+        "templates/07_acta_recepcion_conformidad_sla.tex": {
+          "exists": true,
+          "size_bytes": 12228,
+          "sha256": "20699267c2054db63eff3803d25de1fcc1c6fc57baffed3ce498b260c013dfa5"
+        },
+        "templates/08_memorandum_politica_interna.tex": {
+          "exists": true,
+          "size_bytes": 12294,
+          "sha256": "12f1009739d00693f00ecb426e802b43c9d1bd1fb8e1e5d08b29cca51ca66a7a"
+        }
+      }
+    },
+    {
+      "id": "F4_SHOWCASE_COMPILER",
+      "name": "Showcase Multi-Brand Compiler & Artifacts",
+      "milestone": "M1",
+      "status": "VERIFIED_PRODUCTION",
+      "description": "Automated 2-pass compiler script and 8 compiled production showcase PDFs",
+      "deliverables": [
+        "scripts/build_all_brands.py",
+        "compiled_showcase/bnw_informe_ejecutivo_auditoria_360.pdf",
+        "compiled_showcase/boletos_orden_compra_cotizacion.pdf",
+        "compiled_showcase/nodo_diagramas_flujo_procesos_sop.pdf",
+        "compiled_showcase/vini_descriptor_cargo_rrhh.pdf",
+        "compiled_showcase/wit_propuesta_comercial_licitacion.pdf",
+        "compiled_showcase/boletos_minuta_ejecutiva_directorio.pdf",
+        "compiled_showcase/nodo_acta_recepcion_conformidad_sla.pdf",
+        "compiled_showcase/bnw_memorandum_politica_interna.pdf"
+      ],
+      "deliverable_metadata": {
+        "scripts/build_all_brands.py": {
+          "exists": true,
+          "size_bytes": 5840,
+          "sha256": "1e7536232fca6fa6969c7b7c8afac01079a77a9870560b4b6713891e4744c2cb"
+        },
+        "compiled_showcase/bnw_informe_ejecutivo_auditoria_360.pdf": {
+          "exists": true,
+          "size_bytes": 753785,
+          "sha256": "f697db8acf04a929cd87765a20976a7be3c59ef1b7bdeadb7a7c4ede9b693753"
+        },
+        "compiled_showcase/boletos_orden_compra_cotizacion.pdf": {
+          "exists": true,
+          "size_bytes": 396675,
+          "sha256": "8c6b27f455832b4cc5e01fad4f32c1d40d2b3ebd6e5a0dec1b120819c5110d39"
+        },
+        "compiled_showcase/nodo_diagramas_flujo_procesos_sop.pdf": {
+          "exists": true,
+          "size_bytes": 496778,
+          "sha256": "188c3a7c3e77424729bed65c2df9e6ce28f28b91d71a75a111d10efa30f8a4e6"
+        },
+        "compiled_showcase/vini_descriptor_cargo_rrhh.pdf": {
+          "exists": true,
+          "size_bytes": 423820,
+          "sha256": "a1c360f640774895299fdc69c5f4eafb9b1adc344982487c811e73f0d83eed20"
+        },
+        "compiled_showcase/wit_propuesta_comercial_licitacion.pdf": {
+          "exists": true,
+          "size_bytes": 576842,
+          "sha256": "dfdd5261c1c524c8c463f3a153fddf30d83f716a68a1b37a388cca903c9cce8c"
+        },
+        "compiled_showcase/boletos_minuta_ejecutiva_directorio.pdf": {
+          "exists": true,
+          "size_bytes": 376298,
+          "sha256": "7f12fc44bbf3d332bf2503f24c612c9f3b6302160c55fc8dd24d63682120dfc7"
+        },
+        "compiled_showcase/nodo_acta_recepcion_conformidad_sla.pdf": {
+          "exists": true,
+          "size_bytes": 538590,
+          "sha256": "aca3292a56967ebab719a068b97cd5bf4cadef7a162278b331942046020d794d"
+        },
+        "compiled_showcase/bnw_memorandum_politica_interna.pdf": {
+          "exists": true,
+          "size_bytes": 771013,
+          "sha256": "bccb325f3e61d447caf26c630fcd6048dc8a72fba681ffbbbea134ad0d38b149"
+        }
+      }
+    }
+  ]
+}

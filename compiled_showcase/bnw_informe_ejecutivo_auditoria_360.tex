@@ -1,0 +1,274 @@
+\documentclass[11pt,letterpaper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+% Tipografia Corporativa Oficial (Helvetica / Helvetica Neue + Courier Mono para datos)
+\usepackage[scaled=0.94]{helvet}
+\usepackage{courier}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+\usepackage[brand=bnw]{../core/agy-corporate-brand}
+
+\geometry{
+  letterpaper,
+  top=2.8cm,
+  bottom=2.8cm,
+  left=2.2cm,
+  right=2.2cm,
+  headheight=38pt,
+  headsep=16pt
+}
+
+\begin{document}
+
+% ============================================================================
+% PORTADA EJECUTIVA DE ALTO IMPACTO
+% ============================================================================
+\thispagestyle{corporateplain}
+
+\drawchromaticbar[5pt]
+\vspace{1.5cm}
+
+\noindent
+\begin{minipage}[c]{0.55\textwidth}
+  \includegraphics[height=36pt,keepaspectratio]{\corporatebrandlogo}\\[6pt]
+  {\fontsize{8.5}{11}\selectfont\color{corpTextMuted}\textsf{\corporatebrandtagline}}
+\end{minipage}\hfill
+\begin{minipage}[c]{0.42\textwidth}
+  \raggedleft
+  {\fontsize{8}{10}\selectfont\sffamily\bfseries\color{corpTextAccent} REPORTE DE GOBERNANZA \& RIESGO}\\
+  {\fontsize{7.5}{9.5}\selectfont\sffamily\color{corpTextMuted} CLASIFICACI\'ON: RESTRINGIDO / AUDITOR\'IA 360$^\circ$}\\
+  {\fontsize{7.5}{9.5}\selectfont\sffamily\color{corpTextMuted} DICTAMEN: \texttt{AUD-360-2026-EVAL-01}}
+\end{minipage}
+
+\vspace{2.2cm}
+
+\noindent
+{\fontsize{10}{12}\selectfont\sffamily\bfseries\color{corpTextAccent}\MakeUppercase{Informe Ejecutivo \& Auditor\'ia T\'ecnica Integral 360$^\circ$}}\\[10pt]
+{\fontsize{24}{28}\selectfont\sffamily\bfseries\color{corpPrimary} Auditor\'ia T\'ecnica 360$^\circ$:\\[4pt] Resiliencia, Ciberseguridad \& SLA}\\[12pt]
+{\fontsize{11.5}{15}\selectfont\sffamily\color{corpTextMuted} Evaluaci\'on Exhaustiva de Infraestructura Cr\'itica, Continuidad Operacional,\\ Cumplimiento Contractual (SLA 99.9\%) y Gesti\'on Proactiva de Riesgos Tecnol\'ogicos.}
+
+\vspace{1.0cm}
+\noindent\textcolor{corpBorder}{\rule{0.3\textwidth}{2pt}}
+\vspace{1.2cm}
+
+\begin{corpcard}{FICHA T\'ECNICA DE LA EVALUACI\'ON DE AUDITOR\'IA}
+  \vspace{2pt}
+  \begin{tabularx}{\linewidth}{@{}p{3.8cm} X p{3.8cm} X@{}}
+    \textbf{\color{corpPrimary}Entidad Evaluada:} & \corporatebrandlegal &
+    \textbf{\color{corpPrimary}Periodo Auditor\'ia:} & Q1 -- Q4 Ejercicio 2026 \\
+    \textbf{\color{corpPrimary}Comisi\'on Auditora:} & Direcci\'on de Auditor\'ia TI &
+    \textbf{\color{corpPrimary}Fecha de Dictamen:} & 03 de Noviembre de 2026 \\
+    \textbf{\color{corpPrimary}Est\'andar Primario:} & ISO/IEC 27001 / NIST CSF &
+    \textbf{\color{corpPrimary}Disponibilidad Global:} & \textbf{\color{corpSuccess}99.985\% (Conforme)} \\
+    \textbf{\color{corpPrimary}Nivel de Riesgo:} & \textbf{\color{corpSuccess}Bajo / Controlado} &
+    \textbf{\color{corpPrimary}Certificaci\'on 2PC:} & Verificada en HSM Distribuido \\
+  \end{tabularx}
+  \vspace{2pt}
+\end{corpcard}
+
+\vfill
+
+\noindent\begin{minipage}[b]{0.65\textwidth}
+  {\fontsize{7.5}{9}\selectfont\color{corpTextMuted}\corporatebrandlegal\ -- Todos los derechos reservados.\\[1pt]
+  El presente documento contiene an\'alisis forense y m\'etricas propietarias de operaci\'on.}
+\end{minipage}\hfill
+\begin{minipage}[b]{0.30\textwidth}
+  \raggedleft
+  \drawchromaticbar[3pt]
+\end{minipage}
+
+\newpage
+
+% ============================================================================
+% CUERPO DEL INFORME: METRICAS Y RESUMEN EJECUTIVO (PAGINA 2)
+% ============================================================================
+\setupcorporateheader{AUDITOR\'IA T\'ECNICA 360$^\circ$}{INFORME EJECUTIVO ANUAL}
+
+\section{Resumen Ejecutivo del Dictamen}
+
+La Comisi\'on Auditora de Tecnolog\'ia, Aseguramiento de Calidad y Continuidad Operacional de \textbf{\corporatebrandlegal} ha completado la auditor\'ia t\'ecnica integral 360$^\circ$ sobre los centros de datos, nodos edge y canales de transmisi\'on transaccional.
+
+La auditor\'ia concluye que la infraestructura opera bajo un esquema de \textbf{alta resiliencia y madurez tecnol\'ogica}, superando los umbrales contractuales de disponibilidad (99.900\%) con un registro consolidado de \textbf{99.985\%}. Asimismo, los protocolos criptogr\'aficos y la pol\'itica de respuesta a incidentes demuestran conformidad s\'olida frente a est\'andares internacionales.
+
+\vspace{0.4em}
+
+% Cuadrícula de Métricas Clave (corpmetric)
+\noindent
+\begin{minipage}[t]{0.485\textwidth}
+  \begin{corpmetric}{DISPONIBILIDAD CONSOLIDADA SLA}
+    {\fontsize{18}{20}\selectfont\bfseries\color{corpPrimary} 99.985\%}\\[2pt]
+    {\footnotesize\color{corpSuccess}\textbf{+0.085\%} sobre el umbral contractual (99.900\%)}\\[1pt]
+    {\scriptsize\color{corpTextMuted}Inactividad no programada acumulada: 48.2 min.}
+  \end{corpmetric}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.485\textwidth}
+  \begin{corpmetric}{TIEMPO MEDIO DE RECUPERACI\'ON (MTTR)}
+    {\fontsize{18}{20}\selectfont\bfseries\color{corpPrimary} 11.4 min}\\[2pt]
+    {\footnotesize\color{corpSuccess}\textbf{-62.0\%} frente al l\'imite admisible (30.0 min)}\\[1pt]
+    {\scriptsize\color{corpTextMuted}Restituci\'on automatizada v\'ia conmutaci\'on edge.}
+  \end{corpmetric}
+\end{minipage}
+
+\vspace{0.3em}
+
+\noindent
+\begin{minipage}[t]{0.485\textwidth}
+  \begin{corpmetric}{HALLAZGOS CR\'ITICOS REMEDIADOS}
+    {\fontsize{18}{20}\selectfont\bfseries\color{corpPrimary} 100\%}\\[2pt]
+    {\footnotesize\color{corpSuccess}\textbf{14 de 14} vulnerabilidades cerradas con \'exito}\\[1pt]
+    {\scriptsize\color{corpTextMuted}SLA promedio de remediaci\'on de parches: 18.6 h.}
+  \end{corpmetric}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.485\textwidth}
+  \begin{corpmetric}{CUMPLIMIENTO NORMATIVO}
+    {\fontsize{18}{20}\selectfont\bfseries\color{corpPrimary} 98.8\%}\\[2pt]
+    {\footnotesize\color{corpSuccess}\textbf{Nivel \'Optimo} en controles ISO 27001 / NIST}\\[1pt]
+    {\scriptsize\color{corpTextMuted}Auditor\'ia de acceso, cifrado TLS 1.3 y registros.}
+  \end{corpmetric}
+\end{minipage}
+
+\vspace{0.5em}
+
+\section{Evoluci\'on Cuantitativa de Disponibilidad y SLA Operacional}
+
+Durante los \'ultimos 10 meses de medici\'on continua (Enero a Octubre de 2026), los servicios fueron monitoreados a trav\'es de sondas sint\'eticas concurrentes cada 30 segundos en m\'ultiples zonas de disponibilidad.
+
+\vspace{0.3em}
+
+\begin{center}
+\begin{tikzpicture}
+  \begin{axis}[
+    width=0.96\linewidth,
+    height=5.2cm,
+    grid=both,
+    grid style={line width=0.4pt, draw=corpBorder},
+    xlabel={\footnotesize\textsf{Meses Evaluados (A\~no 2026)}},
+    ylabel={\footnotesize\textsf{Disponibilidad Efectiva (\%)}},
+    xmin=1, xmax=10,
+    ymin=99.85, ymax=100.01,
+    ytick={99.85, 99.90, 99.95, 100.00},
+    yticklabels={99.85\%, 99.90\%, 99.95\%, 100.00\%},
+    xtick={1,2,3,4,5,6,7,8,9,10},
+    xticklabels={Ene, Feb, Mar, Abr, May, Jun, Jul, Ago, Sep, Oct},
+    legend style={
+      at={(0.98,0.22)},
+      anchor=south east,
+      font=\scriptsize\sffamily,
+      fill=corpLightBg,
+      draw=corpBorder
+    },
+    tick label style={font=\scriptsize\sffamily},
+    label style={font=\footnotesize\sffamily}
+  ]
+    % Umbral Contractual SLA 99.90%
+    \addplot[
+      domain=1:10,
+      samples=2,
+      color=corpDanger,
+      dashed,
+      line width=1.1pt
+    ] {99.90};
+    \addlegendentry{Umbral Contractual SLA (99.90\%)}
+
+    % Disponibilidad Real Medida
+    \addplot[
+      color=corpPrimary,
+      line width=1.4pt,
+      mark=square*,
+      mark size=2pt,
+      mark options={fill=corpAccent, draw=corpPrimary}
+    ] coordinates {
+      (1, 99.94)
+      (2, 99.96)
+      (3, 99.93)
+      (4, 99.97)
+      (5, 99.99)
+      (6, 99.98)
+      (7, 99.99)
+      (8, 99.98)
+      (9, 99.99)
+      (10, 100.00)
+    };
+    \addlegendentry{Disponibilidad Real (\corporatebrandname)}
+  \end{axis}
+\end{tikzpicture}
+\end{center}
+
+\newpage
+
+% ============================================================================
+% MATRIZ DE HALLAZGOS Y ALERTAS CRITICAS (PAGINA 3)
+% ============================================================================
+\section{Matriz de Hallazgos y Evaluaci\'on de Severidad}
+
+La siguiente tabla consolida los hallazgos t\'ecnicos detectados durante el muestreo en campo, las inspecciones de configuraci\'on de red y el an\'alisis est\'atico de contenedores:
+
+\vspace{0.4em}
+
+\noindent
+\begin{tabularx}{\linewidth}{@{}c p{2.8cm} X c c@{}}
+  \toprule
+  \textbf{\color{corpPrimary}ID} & \textbf{\color{corpPrimary}Componente} & \textbf{\color{corpPrimary}Hallazgo de Auditor\'ia} & \textbf{\color{corpPrimary}Severidad} & \textbf{\color{corpPrimary}Estado Actual} \\
+  \midrule
+  \texttt{AUD-01} & Pasarela Edge & Desfase en ciclo de renovaci\'on de certificados TLS en microservicios. & \textbf{\color{corpWarning}Media} & \textbf{\color{corpSuccess}Subsanado} \\
+  \addlinespace[3pt]
+  \texttt{AUD-02} & DB Read-Replica & Tiempo de sincronizaci\'on WAL superior a 1.8 s ante picos de demanda. & \textbf{\color{corpWarning}Baja} & \textbf{\color{corpSuccess}Optimizado} \\
+  \addlinespace[3pt]
+  \texttt{AUD-03} & Enlace Troncal & Tiempos de convergencia BGP elevados ante ca\'ida total del enlace primario. & \textbf{\color{corpDanger}Alta} & \textbf{\color{corpSuccess}Remediado} \\
+  \addlinespace[3pt]
+  \texttt{AUD-04} & Agente Telemetr\'ia & Desborde en cola local ante desconexiones de red superiores a 120 min. & \textbf{\color{corpWarning}Media} & \textbf{\color{corpSuccess}Corregido} \\
+  \addlinespace[3pt]
+  \texttt{AUD-05} & HSM / Cripto & Registro SHA-256 de auditor\'ia operaba en modo sincr\'onico con bloqueo. & \textbf{\color{corpWarning}Baja} & \textbf{\color{corpSuccess}Asincr\'onico} \\
+  \bottomrule
+\end{tabularx}
+
+\vspace{0.8em}
+
+\begin{corpalert}{VULNERABILIDAD CR\'ITICA PREVENTIVA: OPTIMIZACI\'ON DE CONVERGENCIA BGP}
+  El hallazgo \texttt{AUD-03} se\~nal\'o que los enrutadores de frontera presentaban tiempos de convergencia de hasta 42 segundos ante contingencias de conectividad troncal. El equipo de ingenier\'ia habilit\'o el protocolo \textit{BGP Bidirectional Forwarding Detection} (BFD), reduciendo la conmutaci\'on autom\'atica a \textbf{780 milisegundos}, evitando p\'erdidas de transacciones.
+\end{corpalert}
+
+\begin{corpnote}{CONSIDERACIONES DE SEGURIDAD EN CAPA TRANSACCIONAL}
+  Todas las peticiones recibidas por las pasarelas son validadas con firmas criptogr\'aficas HMAC-SHA256 y tokens ef\'imeros con caducidad estricta de 60 segundos, imposibilitando ataques de repetici\'on (\textit{replay attacks}) e intrusiones no autenticadas.
+\end{corpnote}
+
+\newpage
+
+% ============================================================================
+% DIRECTIVAS ESTRATEGICAS Y DICTAMEN FINAL (PAGINA 4)
+% ============================================================================
+\section{Directivas Estrat\'egicas de Gobernanza y Continuidad}
+
+\begin{corpdirective}{DIRECTIVA ESTRAT\'EGICA TI-2026-DIR-08: BLINDAJE DE INFRAESTRUCTURA}
+  \begin{enumerate}[leftmargin=1.5em, itemsep=3pt, topsep=2pt]
+    \item \textbf{Monitoreo Predictivo en Borde}: Desplegar modelos de detecci\'on temprana de anomal\'ias en todos los concentradores perif\'ericos para anticipar congestiones con 6 horas de ventana operativa.
+    \item \textbf{Simulacros Programados de Continuidad (DRP)}: Conducir conmutaciones controladas de centro de datos en horario productivo de baja carga con frecuencia bimensual.
+    \item \textbf{Cifrado Cero Confianza (\textit{Zero Trust})}: Forzar el uso exclusivo de suites TLS 1.3 con curvas el\'ipticas (ECDHE) y autenticaci\'on mutua (mTLS) en la totalidad de enlaces intermodulares.
+  \end{enumerate}
+\end{corpdirective}
+
+\section{Dictamen Final y Certificaci\'on Criptogr\'afica}
+
+Por cuanto la infraestructura f\'isica, las redes de transporte y los sistemas transaccionales evaluados cumplen rigurosamente con los est\'andares de seguridad y disponibilidad pactados, la presente Comisi\'on emite dictamen de \textbf{CONFORMIDAD PLENA SIN RESERVAS}, acreditando que las plataformas de \textbf{\corporatebrandlegal} garantizan continuidad operacional y resiliencia probada.
+
+\dualcontrolsignature
+  {Ing. Roberto C. Morales Pinto}
+  {Auditor L\'ider de Ciberseguridad TI}
+  {CISA -- CISSP -- Cert. Reg. 4920}
+  {Dra. Marcela Fuenzalida V.}
+  {Directora de Riesgo \& Cumplimiento}
+  {Comit\'e de Gobernanza Operacional}
+
+\vspace{1.2em}
+
+\cryptoseal
+  {4e1a90cbf685b306912384a569f0b144ce88d3e62f0f494c2e646279f041b6ae}
+  {2026-11-03 14:15:00 UTC}
+  {\corporatebrandname\ Trust Node-01}
+
+\end{document}

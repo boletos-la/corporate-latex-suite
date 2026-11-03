@@ -1,0 +1,239 @@
+\documentclass[11pt,letterpaper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+% Tipografia Corporativa Oficial (Helvetica / Helvetica Neue + Courier Mono para datos)
+\usepackage[scaled=0.94]{helvet}
+\usepackage{courier}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+
+\usepackage[brand=bnw]{../core/agy-corporate-brand}
+
+\geometry{
+  letterpaper,
+  top=2.8cm,
+  bottom=2.8cm,
+  left=2.2cm,
+  right=2.2cm,
+  headheight=38pt,
+  headsep=16pt
+}
+
+\begin{document}
+
+% ============================================================================
+% CABECERA EJECUTIVA DE MEMORANDUM OFICIAL (PAGINA 1)
+% ============================================================================
+\thispagestyle{corporateplain}
+
+\drawchromaticbar[5pt]
+\vspace{1.2cm}
+
+\noindent
+\begin{minipage}[c]{0.55\textwidth}
+  \includegraphics[height=36pt,keepaspectratio]{\corporatebrandlogo}\\[6pt]
+  {\fontsize{8.5}{11}\selectfont\color{corpTextMuted}\textsf{\corporatebrandtagline}}
+\end{minipage}\hfill
+\begin{minipage}[c]{0.42\textwidth}
+  \raggedleft
+  {\fontsize{8}{10}\selectfont\sffamily\bfseries\color{corpTextAccent} CIRCULAR NORMATIVA OFICIAL}\\
+  {\fontsize{7.5}{9.5}\selectfont\sffamily\color{corpTextMuted} DOCUMENTO: \texttt{MEM-2026-CORP-014}}\\
+  {\fontsize{7.5}{9.5}\selectfont\sffamily\color{corpTextMuted} VIGENCIA: INMEDIATA / PERMANENTE}
+\end{minipage}
+
+\vspace{1.6cm}
+
+\noindent
+{\fontsize{10}{12}\selectfont\sffamily\bfseries\color{corpTextAccent}\MakeUppercase{Gobernanza Corporativa \& Seguridad de la Informaci\'on}}\\[8pt]
+{\fontsize{22}{26}\selectfont\sffamily\bfseries\color{corpPrimary} Memor\'andum Normativo:\\[3pt] Pol\'itica de Seguridad \& Resiliencia Edge}\\[10pt]
+{\fontsize{11}{14}\selectfont\sffamily\color{corpTextMuted} Directrices Obligatorias de Cero Confianza (\textit{Zero Trust}), Gesti\'on de Acceso Remoto,\\ Protecci\'on de Datos Sensibles y R\'egimen de Cumplimiento Operacional.}
+
+\vspace{0.8cm}
+
+% Encabezado Clásico Corporativo de Memorándum
+\begin{corpcard}{ENCABEZADO OFICIAL DE MEMOR\'ANDUM}
+  \vspace{2pt}
+  \begin{tabularx}{\linewidth}{@{}p{3.8cm} X@{}}
+    \textbf{\color{corpPrimary}DE:} & Direcci\'on General de Cumplimiento, Riesgo Operacional \& Ciberseguridad \\
+    \textbf{\color{corpPrimary}PARA:} & Toda la Organizaci\'on, Filiales del Grupo, Colaboradores y Contratistas \\
+    \textbf{\color{corpPrimary}CC:} & Directorio Corporativo, Auditor\'ia Interna, Gerencias de \'Area \\
+    \textbf{\color{corpPrimary}FECHA:} & 03 de Noviembre de 2026 \\
+    \textbf{\color{corpPrimary}REF:} & Directiva de Gobernanza Tecnol\'ogica y Protecci\'on de Activos Cr\'iticos \\
+    \textbf{\color{corpPrimary}CLASIFICACI\'ON:} & \textbf{\color{corpDanger}VINCULANTE / OBSERVANCIA GENERAL OBLIGATORIA} \\
+  \end{tabularx}
+  \vspace{2pt}
+\end{corpcard}
+
+\vspace{0.6cm}
+
+% Historial de Control de Versiones
+\noindent{\small\bfseries\color{corpPrimary} HISTORIAL DE CONTROL DE VERSIONES DEL DOCUMENTO}
+\vspace{0.3em}
+
+\noindent
+\begin{tabularx}{\linewidth}{@{}c c p{3.2cm} X@{}}
+  \toprule
+  \textbf{\color{corpPrimary}Versi\'on} & \textbf{\color{corpPrimary}Fecha} & \textbf{\color{corpPrimary}Autor / Cargo} & \textbf{\color{corpPrimary}Resumen del Cambio Normativo} \\
+  \midrule
+  \texttt{v1.0} & 12/01/2024 & CISO Corporativo & Emisi\'on base de pol\'itica de seguridad de endpoints. \\
+  \addlinespace[2pt]
+  \texttt{v2.0} & 20/05/2025 & Direcci\'on TI & Inclusi\'on de directrices de telemetr\'ia y nodos IoT. \\
+  \addlinespace[2pt]
+  \texttt{v3.0} & 03/11/2026 & Oficial de Cumplimiento & Actualizaci\'on obligatoria a arquitectura \textit{Zero Trust} y mTLS. \\
+  \bottomrule
+\end{tabularx}
+
+\vfill
+
+\noindent\begin{minipage}[b]{0.65\textwidth}
+  {\fontsize{7.5}{9}\selectfont\color{corpTextMuted}\corporatebrandlegal\ -- Circular de Aplicaci\'on General.\\[1pt]
+  El desconocimiento de esta norma no exime de su estricto cumplimiento.}
+\end{minipage}\hfill
+\begin{minipage}[b]{0.30\textwidth}
+  \raggedleft
+  \drawchromaticbar[3pt]
+\end{minipage}
+
+\newpage
+
+% ============================================================================
+% OBJETIVO Y DIRECTRICES OBLIGATORIAS (PAGINA 2)
+% ============================================================================
+\setupcorporateheader{MEMOR\'ANDUM NORMATIVO}{POL\'ITICA DE GOBERNANZA INTERNA}
+
+\section{Objetivo, Alcance Normativo y Aplicabilidad}
+
+El prop\'osito del presente memor\'andum normativo es establecer el marco regulatorio obligatorio para la protecci\'on de los activos digitales, bases de datos de clientes, interfaces transaccionales y equipamiento de borde pertenecientes a \textbf{\corporatebrandlegal} o administrados por sus filiales.
+
+\subsection{\'Ambito de Aplicaci\'on Universal}
+Las disposiciones aqu\'i contenidas revisten car\'acter vinculante e inexcusable para:
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt, topsep=1pt]
+  \item \textbf{Personal de Planta y Contratistas}: Empleados directos, personal eventual, consultores y prestadores de servicios que interact\'uen con los sistemas de la compa\~n\'ia.
+  \item \textbf{Infraestructura y Nodos}: Servidores en nube p\'ublica o privada, estaciones edge, datacenters y dispositivos perif\'ericos.
+  \item \textbf{Ciclo de Vida de los Datos}: Informaci\'on en tr\'ansito, datos en procesamiento y almacenamiento en reposo.
+\end{itemize}
+
+\vspace{0.4em}
+
+\section{Directrices Obligatorias de Ciberseguridad y Operaci\'on}
+
+\begin{corpdirective}{DIRECTRIZ NORMATIVA 01: AUTENTICACI\'ON FUERTE (MFA) Y GESTI\'ON DE IDENTIDADES}
+  \begin{enumerate}[leftmargin=1.5em, itemsep=2pt, topsep=1pt]
+    \item \textbf{Factor M\'ultiple Mandatorio}: Todo acceso a cuentas corporativas (correo, VPN, SSH, consolas cloud y ERP) exige autenticaci\'on MFA v\'ia llave f\'isica FIDO2 o token temporal TOTP. Queda vetado el uso de SMS como segundo factor.
+    \item \textbf{Complejidad de Claves}: Longitud m\'inima de 16 caracteres alfanum\'ericos y s\'imbolos. Rotaci\'on obligatoria cada 90 d\'ias.
+    \item \textbf{Prohibici\'on de Cuentas Compartidas}: Se prohibe terminantemente el uso compartido de contrase\~nas de administraci\'on. Toda acci\'on privilegiada debe ser trazable a una identidad nominal e intransferible.
+  \end{enumerate}
+\end{corpdirective}
+
+\vspace{0.4em}
+
+\begin{corpdirective}{DIRECTRIZ NORMATIVA 02: ARQUITECTURA CERO CONFIANZA (\textit{ZERO TRUST}) EN EL BORDE}
+  \begin{enumerate}[leftmargin=1.5em, itemsep=2pt, topsep=1pt]
+    \item \textbf{Segregaci\'on Estricta de Redes}: La red operativa de concentradores edge (OT) permanecer\'a f\'isica y l\'ogicamente aislada de la red administrativa corporativa (IT) mediante firewalls de inspecci\'on profunda (NGFW).
+    \item \textbf{Cifrado mTLS Obligatorio}: Ning\'un nodo o microservicio procesar\'a peticiones no autenticadas con certificados de cliente firmados por la Autoridad Certificadora (CA) ra\'iz interna.
+    \item \textbf{M\'inimo Privilegio (PoLP)}: Los accesos administrativos a servidores se conceder\'an bajo demanda (\textit{Just-in-Time}) por lapsos no mayores a 4 horas.
+  \end{enumerate}
+\end{corpdirective}
+
+\newpage
+
+% ============================================================================
+% PROHIBICIONES Y GESTION DE INCIDENTES (PAGINA 3)
+% ============================================================================
+\section{Prohibiciones Expresas y Acciones Vetadas}
+
+\begin{corpalert}{PROHIBICIONES TAXATIVAS Y VULNERACIONES SEVERAS}
+  Quedan terminantemente prohibidas en toda la organizaci\'on las siguientes conductas:
+  \begin{itemize}[leftmargin=1.5em, itemsep=2pt, topsep=1pt]
+    \item \textbf{Dispositivos No Autorizados}: Conectar equipos personales (BYOD) o memorias USB sin autorizaci\'on previa y an\'alisis forense del \'Area de Seguridad TI.
+    \item \textbf{Extracci\'on de Informaci\'on}: Almacenar c\'odigo fuente, bases de datos o credenciales en servicios de nube p\'ublica personales (Google Drive, Dropbox, repositorios Git p\'ublicos).
+    \item \textbf{Desactivaci\'on de Agentes}: Inhabilitar, modificar o alterar los agentes corporativos de antivirus, EDR (\textit{Endpoint Detection and Response}) o telemetr\'ia de auditor\'ia.
+    \item \textbf{Credenciales en C\'odigo}: Subir claves de API, secretos de bases de datos o llaves criptogr\'aficas a repositorios de versiones sin herramientas de enmascaramiento (\textit{git-secrets}).
+  \end{itemize}
+\end{corpalert}
+
+\vspace{0.4em}
+
+\begin{corpnote}{PROCEDIMIENTO EXCEPCIONAL DE DISPENSA NORMATIVA}
+  Cualquier excepci\'on temporal a las directrices de esta pol\'itica deber\'a ser solicitada formalmente v\'ia formulario de mitigaci\'on de riesgos, requiriendo firma conjunta del CISO y del Gerente del \'Area solicitante, con vigencia m\'axima de 30 d\'ias no prorrogables sin reevaluaci\'on presencial.
+\end{corpnote}
+
+\vspace{0.4em}
+
+\section{Protocolo Mandatorio de Reporte de Incidentes}
+
+Cualquier colaboradora o colaborador que detecte o sospeche una anomal\'ia de seguridad (intento de \textit{phishing}, tr\'afico an\'omalo de red, p\'erdida de equipo m\'ovil corporativo o filtraci\'on de claves) debe activar el protocolo de emergencia:
+
+\vspace{0.4em}
+
+\begin{center}
+\begin{tabularx}{\linewidth}{@{}c p{3.6cm} p{4.0cm} X@{}}
+  \toprule
+  \textbf{\color{corpPrimary}Nivel} & \textbf{\color{corpPrimary}Tipo de Incidente} & \textbf{\color{corpPrimary}Canal de Activaci\'on} & \textbf{\color{corpPrimary}Ventana M\'axima de Reporte} \\
+  \midrule
+  \textbf{\color{corpDanger}P1} & Ataque activo / Filtraci\'on & L\'inea de Emergencia SOC & \textbf{Inmediato (< 15 minutos)} \\
+  \addlinespace[2pt]
+  \textbf{\color{corpWarning}P2} & Mal funcionamiento EDR & Ticket Urgente Service Desk & \textbf{Menor a 60 minutos} \\
+  \addlinespace[2pt]
+  \textbf{P3} & Correo sospechoso & Bot\'on PhishAlarm en Outlook & \textbf{Menor a 4 horas} \\
+  \bottomrule
+\end{tabularx}
+\end{center}
+
+\newpage
+
+% ============================================================================
+% REGIMEN SANCIONATORIO, VIGENCIA Y FIRMAS (PAGINA 4)
+% ============================================================================
+\section{R\'egimen Sancionatorio y Consecuencias Disciplinarias}
+
+El cumplimiento de esta circular es obligatorio y fiscalizable permanentemente. La inobservancia o negligencia frente a los est\'andares establecidos ser\'a calificada seg\'un su gravedad:
+
+\vspace{0.3em}
+
+\noindent
+\begin{tabularx}{\linewidth}{@{}c p{3.6cm} X@{}}
+  \toprule
+  \textbf{\color{corpPrimary}Gravedad} & \textbf{\color{corpPrimary}Tipificaci\'on de la Falta} & \textbf{\color{corpPrimary}Medida Disciplinaria Aplicable} \\
+  \midrule
+  \textbf{Leve} & Descuido en bloqueo de pantalla o retraso en rotaci\'on de clave. & Amonestaci\'on verbal y reentrenamiento obligatorio en seguridad. \\
+  \addlinespace[2pt]
+  \textbf{\color{corpWarning}Grave} & Uso de credenciales compartidas o conexi\'on de equipos no autorizados. & Amonestaci\'on escrita con copia a la autoridad laboral y suspensi\'on. \\
+  \addlinespace[2pt]
+  \textbf{\color{corpDanger}Grav\'isima} & Fuga deliberada de datos, sabotaje o desactivaci\'on de controles. & T\'ermino inmediato del contrato sin indemnizaci\'on y querella penal. \\
+  \bottomrule
+\end{tabularx}
+
+\vspace{0.4em}
+
+\noindent{\footnotesize\color{corpTextMuted}\textit{Nota Legal:} Sin perjuicio de las medidas internas, la compa\~n\'ia ejercer\'a las acciones indemnizatorias y penales pertinentes al amparo de la legislaci\'on vigente de Delitos Inform\'aticos y Protecci\'on de Datos Personales.}
+
+\vspace{0.4em}
+
+\section{Vigencia, Derogaciones y Canales de Consulta}
+
+\begin{itemize}[leftmargin=1.5em, itemsep=1pt, topsep=1pt]
+  \item \textbf{Vigencia Inmediata}: Rige a partir de las 00:00 horas del d\'ia de su publicaci\'on oficial.
+  \item \textbf{Efecto Derogatorio}: Deja sin efecto y deroga las circulares internas \texttt{CIR-2024-02} y \texttt{CIR-2025-08}.
+  \item \textbf{Canal de Denuncia \'Etica}: Buz\'on confidencial e independiente en:\\[1pt]
+  \texttt{\corporatebrandweb/canal-etico}
+\end{itemize}
+
+\dualcontrolsignature
+  {Dr. Gonzalo A. Valenzuela R.}
+  {Oficial Corporativo de Cumplimiento \& CISO}
+  {\corporatebrandlegal}
+  {Ignacio V. Bravo M.}
+  {Gerente General \& Representante Legal}
+  {\corporatebrandlegal}
+
+\vspace{0.5em}
+
+\cryptoseal
+  {9c4b72ef1a08412e87d03923a411bc40e74f881290bb341fa502e617d58a94cb}
+  {2026-11-03 17:00:00 UTC}
+  {\corporatebrandname\ Governance Policy Ledger}
+
+\end{document}

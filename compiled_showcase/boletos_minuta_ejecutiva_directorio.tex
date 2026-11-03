@@ -1,0 +1,211 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+% Tipografia Corporativa Oficial (Helvetica / Helvetica Neue + Courier Mono para datos)
+\usepackage[scaled=0.94]{helvet}
+\usepackage{courier}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{colortbl}
+\usepackage{enumitem}
+
+% Antigravity Corporate Brand Identity (Interchangeable: bnw, boletos, nodo, vini, wit)
+\usepackage[brand=boletos]{../core/agy-corporate-brand}
+
+\geometry{
+  top=2.0cm,
+  bottom=1.8cm,
+  left=1.8cm,
+  right=1.8cm,
+  headheight=38pt,
+  headsep=12pt,
+  footskip=16pt
+}
+
+\begin{document}
+
+% Configuración de Encabezado Corporativo
+\setupcorporateheader{MINUTA EJECUTIVA DE DIRECTORIO}{SESION ORD. N° 104-2026}
+
+% Barra cromática institucional de la marca
+\drawchromaticbar[3.5pt]
+\vspace{2.5mm}
+
+% Título y Encabezado de Sesión
+\noindent
+\begin{minipage}[t]{0.64\textwidth}
+  {\fontsize{17}{21}\selectfont\bfseries\color{corpPrimary}ACTA DE SESION ORDINARIA}\\[2pt]
+  {\small\bfseries\color{corpTextAccent}COMITE DE DIRECTORIO \& GOBIERNO CORPORATIVO}\\[3pt]
+  {\footnotesize\color{corpTextMuted}Revision Estrategica Q3-2026, Despliegue de Infraestructura Edge y Aprobacion CAPEX}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.33\textwidth}
+  \raggedleft
+  \begin{tcolorbox}[
+    enhanced,
+    colback=corpLightBg,
+    colframe=corpBorder,
+    arc=2mm,
+    boxrule=0.7pt,
+    top=2mm, bottom=2mm, left=3mm, right=3mm
+  ]
+    \raggedleft
+    {\scriptsize\bfseries\color{corpTextMuted}ACTA IDENTIFICADOR}\\[1pt]
+    {\normalsize\bfseries\color{corpPrimary}ACT-DIR-2026-104}\\[2pt]
+    {\scriptsize\color{corpTextDark}Sesion: \textbf{Ordinaria Trimestral}}\\[1pt]
+    {\scriptsize\color{corpSuccess}\textbf{Quorum: 100\% (Constituida)}}
+  \end{tcolorbox}
+\end{minipage}
+
+\vspace{2.5mm}
+
+% Ficha de Control de Sesión
+\noindent
+\begin{tcolorbox}[
+  enhanced,
+  colback=white,
+  colframe=corpBorder,
+  title={\small\bfseries\color{corpPrimary}FICHA DE CONTROL Y CONDICIONES DE LA SESION},
+  colbacktitle=corpLightBg,
+  arc=1.5mm,
+  boxrule=0.6pt,
+  top=2.5mm, bottom=2.5mm, left=3.5mm, right=3.5mm
+]
+  \noindent
+  \begin{tabularx}{\linewidth}{@{} l X l X @{}}
+    {\footnotesize\bfseries Fecha:} & {\footnotesize 03 de Noviembre de 2026} &
+    {\footnotesize\bfseries Moderador:} & {\footnotesize Lic. Guillermo Edwards Valenzuela} \\
+    {\footnotesize\bfseries Horario:} & {\footnotesize 09:00 - 12:30 hrs (GMT-3)} &
+    {\footnotesize\bfseries Secretario:} & {\footnotesize Abg. Felipe Larrain Mackenna} \\
+    {\footnotesize\bfseries Modalidad:} & {\footnotesize Hibrida (Torre Titanium / Cifrado)} &
+    {\footnotesize\bfseries Entidad Emisora:} & {\footnotesize \corporatebrandlegal} \\
+  \end{tabularx}
+\end{tcolorbox}
+
+\vspace{1.5mm}
+
+% Tabla de Asistentes y Ausentes
+\noindent{\bfseries\color{corpPrimary}\small Registro de Asistentes y Participantes}
+\vspace{1mm}
+
+\noindent
+\begin{tabularx}{\linewidth}{@{} p{4.2cm} p{4.8cm} p{4.5cm} c @{}}
+  \toprule
+  \rowcolor{corpPrimary}
+  {\bfseries\color{white}\scriptsize Nombre del Integrante} &
+  {\bfseries\color{white}\scriptsize Cargo Institucional / Rol} &
+  {\bfseries\color{white}\scriptsize Entidad Representada} &
+  {\bfseries\color{white}\scriptsize Condicion / Asistencia} \\
+  \midrule
+  \rowcolor{corpLightBg}
+  Lic. Guillermo Edwards V. & Presidente del Directorio & \corporatebrandname\ Holding & Presente (Presencial) \\
+  Ing. Sebastian Rios Alarcon & Director de Operaciones \& TI & Direccion Tecnica Corporativa & Presente (Presencial) \\
+  \rowcolor{corpLightBg}
+  Dra. Claudia Miranda V. & Directora de Finanzas \& CFO & Gerencia de Finanzas y Control & Presente (Virtual 2FA) \\
+  Lic. Carlos Sandoval Meneses & Director Independiente & Auditoria y Gobierno Corporativo & Presente (Presencial) \\
+  \rowcolor{corpLightBg}
+  Abg. Felipe Larrain M. & Secretario General \& Legal Counsel & Asesoria Juridica Corporativa & Presente (Secretario) \\
+  Dra. Patricia Munoz Godoy & Representante Auditoria Externa & Price \& Deloitte Advisory & Invitada Especial \\
+  \bottomrule
+\end{tabularx}
+
+\vspace{2mm}
+
+% Tabla de Agenda y Puntos Tratados
+\noindent{\bfseries\color{corpPrimary}\small Agenda de la Sesion y Sintesis de Deliberaciones}
+\vspace{1mm}
+
+\noindent
+\begin{tabularx}{\linewidth}{@{} c p{4.0cm} X @{}}
+  \toprule
+  \rowcolor{corpPrimary}
+  {\bfseries\color{white}\scriptsize N°} &
+  {\bfseries\color{white}\scriptsize Punto de Agenda} &
+  {\bfseries\color{white}\scriptsize Resumen Ejecutivo de Deliberaciones y Acuerdos Preliminares} \\
+  \midrule
+  \rowcolor{corpLightBg}
+  01 & Aprobacion Acta N° 103 & Se da lectura al acta precedente, la cual es aprobada sin observaciones por la unanimidad de los directores presentes. \\
+  02 & Despliegue Red Edge NODO & La direccion tecnica expone el cumplimiento del 98.4\% del SLA en centros de datos edge y la puesta en marcha de 50 nuevos nodos de telemetria VINI. \\
+  \rowcolor{corpLightBg}
+  03 & Desempeno Financiero Q3 & El CFO reporta un crecimiento interanual del margen EBITDA de 14.2\%, con solidez de caja para financiar el plan de inversion 2027 sin apalancamiento riesgoso. \\
+  04 & Inversion Estrategica CAPEX & Se delibera sobre la adquisicion de licencias de alta disponibilidad y clusters transaccionales 2PC para soportar facturacion SIFEN / DTE. \\
+  \bottomrule
+\end{tabularx}
+
+\clearpage
+
+% ==================== PÁGINA 2: DIRECTIVAS, COMPROMISOS Y FIRMAS ====================
+\drawchromaticbar[3.5pt]
+\vspace{3mm}
+
+% Caja Directiva de Acuerdos Críticos
+\begin{corpdirective}{DIRECTIVA ESTRATEGICA DEL DIRECTORIO DIR-2026-D12}
+  \textbf{Aprobacion Unanime del Plan de Inversion CAPEX 2027 y Modernizacion de Plataformas}\\
+  El Directorio, en ejercicio de sus facultades estatutarias, acuerda autorizar la asignacion presupuestaria de \textbf{USD 1,850,000} destinada a:
+  \begin{enumerate}[leftmargin=*, noitemsep, topsep=2pt]
+    {\small
+    \item Adquisicion y despliegue de 120 servidores Edge Gateway de alta redundancia con garantia NBD de 24 meses.
+    \item Homologacion total de la plataforma de emision tributaria bajo norma SIFEN (DNIT Paraguay) y SII (DTE Chile).
+    \item Implementacion de arquitectura de doble factor y sellado SHA-256 en transacciones interempresariales.}
+  \end{enumerate}
+\end{corpdirective}
+
+\vspace{1mm}
+
+% Caja Alerta de Riesgos Identificados
+\begin{corpalert}{ALERTA DE RIESGO DE GOBIERNO \& CUMPLIMIENTO REGULATORIO}
+  \textbf{Riesgo R-04: Transicion de Protocolos de Facturacion Electronica SIFEN/DTE}\\
+  Se identifica riesgo de latencia transaccional en horas punta si no se completan las pruebas de carga del cluster 2PC antes del 15 de diciembre de 2026.
+  \textbf{Accion Inmediata Exigida:} La Gerencia de TI debera implementar nodos de contingencia redundantes y entregar el informe de pruebas de estres en un plazo perentorio de 15 dias habiles.
+\end{corpalert}
+
+\vspace{2mm}
+
+% Matriz de Compromisos y Acuerdos (Action Items)
+\noindent{\bfseries\color{corpPrimary}\small Matriz de Compromisos, Responsables y SLAs de Cumplimiento}
+\vspace{1mm}
+
+\noindent
+\begin{tabularx}{\linewidth}{@{} c X p{3.8cm} c c @{}}
+  \toprule
+  \rowcolor{corpPrimary}
+  {\bfseries\color{white}\scriptsize N°} &
+  {\bfseries\color{white}\scriptsize Compromiso / Accion Comprometida} &
+  {\bfseries\color{white}\scriptsize Responsable Directo} &
+  {\bfseries\color{white}\scriptsize SLA / Plazo} &
+  {\bfseries\color{white}\scriptsize Estado Actual} \\
+  \midrule
+  \rowcolor{corpLightBg}
+  01 & Formalizar adenda de suministro con proveedor TechLogix SpA. & Gerencia de Operaciones & 18/Nov/2026 & \textcolor{corpWarning}{\textbf{En Curso}} \\
+  02 & Presentar modelo financiero de cobertura cambiaria USD/CLP/PYG. & CFO \& Tesoreria & 25/Nov/2026 & \textcolor{corpSuccess}{\textbf{Finalizado}} \\
+  \rowcolor{corpLightBg}
+  03 & Concluir auditoria de penetration testing sobre gateways edge. & Oficial CISO / Seguridad & 05/Dic/2026 & \textcolor{corpPrimary}{\textbf{Programado}} \\
+  04 & Remitir acta de directorio protocolizada a entidades bancarias. & Secretaria General & 10/Dic/2026 & \textcolor{corpWarning}{\textbf{En Tramite}} \\
+  \bottomrule
+\end{tabularx}
+
+\vspace{3mm}
+
+% Bloque de Firmas de Directores Presentes
+\noindent{\bfseries\color{corpPrimary}\small Suscripcion y Aprobacion de Conformidad del Directorio}
+\vspace{1mm}
+
+\dualcontrolsignature%
+  {Lic. Guillermo Edwards Valenzuela}{Presidente del Directorio}{\corporatebrandname\ Holding}%
+  {Dra. Claudia Miranda Valenzuela}{Directora de Finanzas \& CFO}{\corporatebrandname\ Holding}
+
+\dualcontrolsignature%
+  {Ing. Sebastian Rios Alarcon}{Director de Operaciones \& TI}{Direccion Tecnica Corporativa}%
+  {Abg. Felipe Larrain Mackenna}{Secretario General \& Legal Counsel}{Ministro de Fe del Directorio}
+
+\vspace{2mm}
+
+% Sello Criptográfico SHA-256
+\cryptoseal%
+  {c2a8497d519e83f08146eb2b51239aa8e3796dcf9742410a8b9e67d2653f58e1}%
+  {2026-11-03T12:45:00.000Z}%
+  {BNW-BOARD-GOVERNANCE-SHA256-VALIDATED}
+
+\end{document}
