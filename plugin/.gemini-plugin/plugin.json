@@ -1,0 +1,11 @@
+{
+  "name": "corporate-latex-plugin",
+  "version": "1.0.0",
+  "displayName": "BNW Corporate LaTeX Suite Plugin",
+  "description": "Suite corporativa maestra de generacion y compilacion de documentos LaTeX de alta fidelidad para el Holding Grupo BNW, Boletos.la, Nodo, VINI y WIT.",
+  "author": "BNW Corporate Group / Antigravity Engineering",
+  "categories": ["productivity", "engineering", "documentation"],
+  "skills": [
+    "skills/corporate-latex"
+  ]
+}
