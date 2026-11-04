@@ -4,6 +4,7 @@
 \RequirePackage{kvoptions}
 \RequirePackage{xcolor}
 \RequirePackage{graphicx}
+\graphicspath{{./}{../assets/logos/}{./assets/logos/}{C:/Users/ivanv/Templates Latex/CORPORATE_SUITE/assets/logos/}}
 \RequirePackage{tikz}
 \RequirePackage{tcolorbox}
 \RequirePackage{booktabs}
@@ -18,8 +19,12 @@
 % Tipografia Corporativa Oficial (Manuales de Marca Grupo BNW, Boletos.la, WIT, VINI, Nodo)
 % Estandar Impreso/Editorial: Helvetica / Helvetica Neue escalada al 94%
 % Estandar Numerico/Fiscal: Courier Mono tabular para CDC 44 digitos, precios y timers
-\RequirePackage[scaled=0.94]{helvet}
-\RequirePackage{courier}
+\@ifpackageloaded{helvet}{}{%
+  \RequirePackage[scaled=0.94]{helvet}%
+}
+\@ifpackageloaded{courier}{}{%
+  \RequirePackage{courier}%
+}
 \renewcommand{\familydefault}{\sfdefault}
 
 \usetikzlibrary{shapes.geometric, arrows.meta, positioning, calc, fit, backgrounds, matrix, shadows}
@@ -57,7 +62,9 @@
   \def\corporatebrandrut{RUT: 77.892.340-K}%
   \def\corporatebrandweb{www.grupobnw.com}%
   \def\corporatebrandemail{contacto@grupobnw.com}%
-  \def\corporatebrandlogo{C:/Users/ivanv/Pictures/LOGOS/bnw corporate group.png}%
+  \def\corporatebrandlogodark{logo-bnw-white.png}%
+  \def\corporatebrandlogolight{logo-bnw-black.png}%
+  \def\corporatebrandlogo{logo-bnw-black.png}%
   % Paleta Oficial BNW
   \definecolor{corpPrimary}{HTML}{000000}       % Obsidian
   \definecolor{corpSurface}{HTML}{0D0F12}       % Dark Surface
@@ -65,6 +72,8 @@
   \definecolor{corpSecondary}{HTML}{2E3136}     % Graphite
   \definecolor{corpTextAccent}{HTML}{6B4608}    % Bronze AAA sobre fondo claro
   \definecolor{corpLightBg}{HTML}{F5F2EB}       % Warm Ivory
+  \definecolor{corpDarkHeader}{HTML}{000000}    % Encabezados oscuros de alto contraste
+  \definecolor{corpDarkCoverAccent}{HTML}{F2C681} % Acento en portada oscura (Champagne Gold)
   \definecolor{corpTextDark}{HTML}{1A1D20}%
   \definecolor{corpTextMuted}{HTML}{5A5E66}     % Slate
   \definecolor{corpBorder}{HTML}{DCD7CD}%
@@ -88,10 +97,12 @@
   \def\corporatebrandname{Boletos.la}%
   \def\corporatebrandlegal{Boletos.la SpA / Soluciones Digitales de Transporte}%
   \def\corporatebrandtagline{Plataforma Integral de Emision y Gestion de Pasajes Terrestres}%
-  \def\corporatebrandrut{RUT: 77.412.580-2}%
+  \def\corporatebrandrut{RUC: 80171570-9 (PY) / RUT: 77.412.580-2 (CL)}%
   \def\corporatebrandweb{www.boletos.la}%
   \def\corporatebrandemail{soporte@boletos.la}%
-  \def\corporatebrandlogo{C:/Users/ivanv/Templates Latex/logo-boletos.png}%
+  \def\corporatebrandlogodark{logo-boletos-white.png}%
+  \def\corporatebrandlogolight{logo-boletos.png}%
+  \def\corporatebrandlogo{logo-boletos.png}%
   % Paleta Oficial Boletos.la
   \definecolor{corpPrimary}{HTML}{FF6700}       % Tangelo BO
   \definecolor{corpAccent}{HTML}{FFAA00}        % Solar Amber LE
@@ -99,6 +110,8 @@
   \definecolor{corpSurface}{HTML}{0A192F}       % Totem Navy
   \definecolor{corpCyan}{HTML}{00C7CC}          % Electric Cyan TOS
   \definecolor{corpTextAccent}{HTML}{007A78}    % Teal Text AA
+  \definecolor{corpDarkHeader}{HTML}{0A192F}    % Dark Slate para tablas y títulos
+  \definecolor{corpDarkCoverAccent}{HTML}{FFAA00} % Acento en portada oscura (Solar Amber)
   \definecolor{corpLightBg}{HTML}{F8FAFC}%
   \definecolor{corpTextDark}{HTML}{3F3F3F}      % Anthracite
   \definecolor{corpTextMuted}{HTML}{64748B}%
@@ -126,7 +139,9 @@
   \def\corporatebrandrut{RUT: 76.985.120-4}%
   \def\corporatebrandweb{www.nodo-edge.net}%
   \def\corporatebrandemail{noc@nodo-edge.net}%
-  \def\corporatebrandlogo{C:/Users/ivanv/Pictures/LOGOS/Logo Nodo.png}%
+  \def\corporatebrandlogodark{logo-nodo-white.png}%
+  \def\corporatebrandlogolight{logo-nodo-dark.png}%
+  \def\corporatebrandlogo{logo-nodo-dark.png}%
   % Paleta Oficial Nodo
   \definecolor{corpPrimary}{HTML}{1E1B4B}       % Deep Indigo
   \definecolor{corpSurface}{HTML}{0F172A}       % Midnight Slate
@@ -134,6 +149,8 @@
   \definecolor{corpSecondary}{HTML}{6D28D9}     % Edge Violet
   \definecolor{corpTextAccent}{HTML}{4338CA}%
   \definecolor{corpIndigoLight}{HTML}{818CF8}   % Indigo Dark/Light
+  \definecolor{corpDarkHeader}{HTML}{1E1B4B}    % Deep Indigo para títulos/tablas
+  \definecolor{corpDarkCoverAccent}{HTML}{06B6D4} % Cian Enlace de alto contraste sobre oscuro
   \definecolor{corpLightBg}{HTML}{F8FAFC}%
   \definecolor{corpTextDark}{HTML}{0F172A}%
   \definecolor{corpTextMuted}{HTML}{64748B}%
@@ -167,13 +184,17 @@
   \def\corporatebrandrut{RUT: 76.543.210-9}%
   \def\corporatebrandweb{www.vini.tech}%
   \def\corporatebrandemail{contacto@vini.tech}%
-  \def\corporatebrandlogo{C:/Users/ivanv/Pictures/LOGOS/LOGO VINI V4.png}%
+  \def\corporatebrandlogodark{logo-vini-white.png}%
+  \def\corporatebrandlogolight{logo-vini-dark.png}%
+  \def\corporatebrandlogo{logo-vini-dark.png}%
   % Paleta Oficial VINI
   \definecolor{corpPrimary}{HTML}{000000}       % Wordmark Black
   \definecolor{corpSurface}{HTML}{0F172A}       % Dark Slate
   \definecolor{corpAccent}{HTML}{2563EB}        % Cobalt Fleet
   \definecolor{corpSecondary}{HTML}{1D4ED8}     % Cobalt AA
   \definecolor{corpCobaltLight}{HTML}{60A5FA}   % Cobalt Dark / Light Accent
+  \definecolor{corpDarkHeader}{HTML}{000000}    % Negro institucional
+  \definecolor{corpDarkCoverAccent}{HTML}{60A5FA} % Cobalt Light de alto contraste sobre oscuro
   \definecolor{corpTextAccent}{HTML}{1D4ED8}%
   \definecolor{corpSuccess}{HTML}{059669}       % Telemetry Emerald
   \definecolor{corpWarning}{HTML}{D97706}       % Telemetry Amber
@@ -202,12 +223,16 @@
   \def\corporatebrandrut{RUT: 76.543.210-9}%
   \def\corporatebrandweb{www.wit.la}%
   \def\corporatebrandemail{innovacion@wit.la}%
-  \def\corporatebrandlogo{C:/Users/ivanv/Pictures/LOGOS/wit.png}%
+  \def\corporatebrandlogodark{logo-wit-white.png}%
+  \def\corporatebrandlogolight{logo-wit-black.png}%
+  \def\corporatebrandlogo{logo-wit-black.png}%
   % Paleta Oficial WIT
   \definecolor{corpPrimary}{HTML}{0B132B}       % Deep Slate
   \definecolor{corpSurface}{HTML}{1C2541}       % Slate Surface
   \definecolor{corpAccent}{HTML}{0077B6}        % Cyan Light AA
   \definecolor{corpSecondary}{HTML}{00B4D8}     % Cyan Dark
+  \definecolor{corpDarkHeader}{HTML}{0F174C}    % Azul marino primario ejecutivo
+  \definecolor{corpDarkCoverAccent}{HTML}{00B4D8} % Cyan claro de alto contraste sobre oscuro
   \definecolor{corpTextAccent}{HTML}{0077B6}%
   \definecolor{corpLightBg}{HTML}{F8FAFC}%
   \definecolor{corpTextDark}{HTML}{0B132B}%
@@ -244,13 +269,21 @@
   
   \fancyhead[L]{%
     \noindent\parbox[c]{0.5\textwidth}{%
-      \includegraphics[height=18pt,keepaspectratio]{\corporatebrandlogo}\\[2pt]
+      \IfFileExists{\corporatebrandlogolight}{%
+        \includegraphics[height=18pt,keepaspectratio]{\corporatebrandlogolight}\\[2pt]%
+      }{%
+        \IfFileExists{\corporatebrandlogo}{%
+          \includegraphics[height=18pt,keepaspectratio]{\corporatebrandlogo}\\[2pt]%
+        }{%
+          {\bfseries\color{corpDarkHeader}\corporatebrandname}\\[2pt]%
+        }%
+      }%
       {\fontsize{7}{8}\selectfont\color{corpTextMuted}\corporatebrandtagline}
     }%
   }
   \fancyhead[R]{%
     \noindent\parbox[c]{0.48\textwidth}{\raggedleft%
-      {\fontsize{9}{11}\selectfont\bfseries\color{corpPrimary}#1}\\[1pt]
+      {\fontsize{9}{11}\selectfont\bfseries\color{corpDarkHeader}#1}\\[1pt]
       {\fontsize{7}{8}\selectfont\color{corpTextAccent}#2}
     }%
   }
@@ -268,6 +301,76 @@
   \renewcommand{\headrulewidth}{0pt}
   \fancyfoot[L]{{\fontsize{7}{8}\selectfont\color{corpTextMuted}\corporatebrandlegal\ -- \corporatebrandweb}}
   \fancyfoot[R]{{\fontsize{7}{8}\selectfont\color{corpTextMuted}Pagina \thepage\ de \pageref{LastPage}}}
+}
+
+% =============================================================================
+% PORTADA EJECUTIVA FULL-BLEED 360° (PRIMERA PÁGINA OSCURA OFICIAL)
+% =============================================================================
+\newcommand{\makecorporatedarkcover}[8]{%
+  \begin{titlepage}
+  \hypersetup{pageanchor=false}
+  \pagecolor{corpSurface}
+  \color{white}
+  \vspace*{0.8cm}
+  
+  \begin{center}
+    % Logotipo Institucional Blanco para fondo oscuro
+    \IfFileExists{\corporatebrandlogodark}{%
+      \includegraphics[height=1.6cm,keepaspectratio]{\corporatebrandlogodark}\\[0.4cm]
+    }{%
+      \IfFileExists{\corporatebrandlogo}{%
+        \includegraphics[height=1.6cm,keepaspectratio]{\corporatebrandlogo}\\[0.4cm]
+      }{%
+        {\Huge\bfseries\color{white}\corporatebrandname}\\[0.4cm]
+      }%
+    }%
+    {\large\textsc{\color{corpDarkCoverAccent}\corporatebrandtagline}}\\[0.6cm]
+    
+    % Barra Cromática Institucional de Acento
+    \drawchromaticbar[3.5pt]
+    \vspace{0.6cm}
+    
+    % Títulos y Subtítulos Paramétricos
+    {\fontsize{22}{28}\selectfont\bfseries #1\par}
+    \vspace{0.4cm}
+    {\large\bfseries\color{corpDarkCoverAccent}#2\par}
+    \vspace{0.3cm}
+    {\small\color{white!85}#3\par}
+    \vspace{0.6cm}
+    
+    % Barra de Acento Inferior
+    \drawchromaticbar[2pt]
+    \vspace{0.6cm}
+    
+    % Tarjeta de Metadatos de la Portada
+    \begin{tcolorbox}[
+      enhanced,
+      colback=corpSurface!85!black,
+      colframe=corpDarkCoverAccent,
+      arc=3mm,
+      boxrule=1.1pt,
+      width=0.96\textwidth,
+      drop shadow={opacity=0.3, shadow xshift=2pt, shadow yshift=-2pt}
+    ]
+      \color{white}
+      \renewcommand{\arraystretch}{1.35}
+      \begin{tabularx}{\linewidth}{@{}l X@{}}
+        \textbf{\textcolor{corpDarkCoverAccent}{Entidad Emisora:}} & \corporatebrandlegal \\
+        \textbf{\textcolor{corpDarkCoverAccent}{Destinatario / Alcance:}} & #4 \\
+        \textbf{\textcolor{corpDarkCoverAccent}{Dirección y Liderazgo Técnico:}} & \textbf{#5} \\
+        \textbf{\textcolor{corpDarkCoverAccent}{Fecha de Emisión:}} & #6 \\
+        \textbf{\textcolor{corpDarkCoverAccent}{Código de Referencia:}} & \texttt{#7} \\
+        \textbf{\textcolor{corpDarkCoverAccent}{Veredicto de Auditoría / Estado:}} & \textbf{\color{corpSuccess}#8} \\
+      \end{tabularx}
+    \end{tcolorbox}
+    
+    \vfill
+    {\footnotesize\color{gray!40}\corporatebrandlegal\ $\bullet$\ \corporatebrandrut\ $\bullet$\ \corporatebrandweb}
+  \end{center}
+  \end{titlepage}
+  \pagecolor{white}
+  \color{corpTextDark}
+  \clearpage
 }
 
 % TColorBox Corporate Environments

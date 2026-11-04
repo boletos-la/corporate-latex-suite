@@ -1,223 +1,220 @@
-\documentclass[11pt,a4paper]{article}
+\documentclass[10pt,letterpaper]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 % Tipografia Corporativa Oficial (Helvetica / Helvetica Neue + Courier Mono para datos)
 \usepackage[scaled=0.94]{helvet}
 \usepackage{courier}
 \renewcommand{\familydefault}{\sfdefault}
-\usepackage{microtype}
-\usepackage{amsmath,amssymb}
-\usepackage{booktabs}
+\usepackage[spanish,es-nodecimaldot,es-noshorthands]{babel}
+\usepackage[margin=1.2cm,top=1.0cm,bottom=1.0cm]{geometry}
+\usepackage{graphicx}
 \usepackage{tabularx}
+\usepackage{booktabs}
 \usepackage{colortbl}
+\usepackage{xcolor}
+\usepackage{array}
 \usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
 
 % Antigravity Corporate Brand Identity (Interchangeable: bnw, boletos, nodo, vini, wit)
 \usepackage[brand=bnw]{../core/agy-corporate-brand}
 
-\geometry{
-  top=2.0cm,
-  bottom=1.8cm,
-  left=1.8cm,
-  right=1.8cm,
-  headheight=38pt,
-  headsep=12pt,
-  footskip=16pt
-}
+\pagestyle{empty}
 
 \begin{document}
 
-% Configuración de Encabezado Corporativo
-\setupcorporateheader{ORDEN DE COMPRA \& COTIZACION}{DOC-ID: OC-2026-0842-REV2}
+% =============================================================
+% PÁGINA 1: FORMULARIO OFICIAL DE ORDEN DE COMPRA Y SOLICITUD
+% =============================================================
 
-% Barra cromática institucional de la marca
-\drawchromaticbar[3.5pt]
-\vspace{3mm}
+\begin{center}
+    \IfFileExists{\corporatebrandlogolight}{%
+        \includegraphics[height=1.25cm,keepaspectratio]{\corporatebrandlogolight}\\[0.15cm]
+    }{%
+        \IfFileExists{\corporatebrandlogo}{%
+            \includegraphics[height=1.25cm,keepaspectratio]{\corporatebrandlogo}\\[0.15cm]
+        }{%
+            {\LARGE\bfseries\color{corpDarkHeader}\corporatebrandname}\\[0.15cm]
+        }%
+    }%
+    {\LARGE\bfseries\color{corpDarkHeader}Formulario de Orden de Compra \& Solicitud de Adquisiciones}\\[0.05cm]
+    {\footnotesize\color{corpTextMuted}\corporatebrandlegal\ --- \corporatebrandtagline\ --- P\'agina 1 de 2: \'Items Requeridos}
+\end{center}
 
-% Encabezado y Título Principal
+\vspace{0.05cm}
+
+\hfill
+\begin{tabular}{|p{3.2cm}|p{3.2cm}|}
+\hline
+\centering\footnotesize\bfseries N° de Folio & \centering\footnotesize\bfseries Fecha de Emisi\'on \tabularnewline
+\hline
+\centering\footnotesize\ttfamily OC-2026-0842-BNW & \centering\footnotesize 2026-11-04 \tabularnewline
+\hline
+\end{tabular}
+
+\vspace{0.15cm}
+\noindent{\color{corpDarkHeader}\rule{\textwidth}{1.5pt}}\\[-0.12cm]
+\noindent{\color{corpPrimary}\rule{\textwidth}{0.8pt}}
+\vspace{0.1cm}
+
+\noindent{\textbf{\small DATOS DEL SOLICITANTE / CENTRO DE COSTO RESPONSABLE}}\\[0.1cm]
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash\bfseries\small}p{4.2cm}|X|}
+\hline
+Entidad Solicitante / RUT: & \corporatebrandlegal\ (\corporatebrandrut) \\
+\hline
+Nombre Solicitante / Cargo: & Iv\'an Valenzuela M. --- Chief Technology Officer (CTO) \\
+\hline
+Negocio / Proyecto / CC: & Cl\'uster Edge Datacenter \& Infraestructura Distribuida --- CC-4402 \\
+\hline
+Proveedor Adjudicado: & TechLogix Sistemas Distribuidos SpA (RUT: 76.924.180-3 / RUC: 80094120-1) \\
+\hline
+Condici\'on de Pago: & 30 d\'ias Factura electr\'onica contra Hito 2PC Verificado \\
+\hline
+\end{tabularx}
+
+\vspace{0.25cm}
+
+\renewcommand{\arraystretch}{1.2}
 \noindent
-\begin{minipage}[t]{0.62\textwidth}
-  {\fontsize{18}{22}\selectfont\bfseries\color{corpPrimary}ORDEN DE COMPRA FORMAL}\\[2pt]
-  {\small\bfseries\color{corpTextAccent}SUMINISTRO DE INFRAESTRUCTURA EDGE, CLUSTER IOT \& HARDWARE 2PC}\\[3pt]
-  {\footnotesize\color{corpTextMuted}Regulado bajo Acuerdo Marco de Adquisiciones Corporativas y Politicas de Abastecimiento}
+\begin{tabularx}{\textwidth}{|>{\centering\arraybackslash}p{0.55cm}|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}p{2.6cm}|>{\centering\arraybackslash}p{1.0cm}|>{\raggedleft\arraybackslash}p{2.1cm}|>{\raggedright\arraybackslash}p{2.9cm}|>{\centering\arraybackslash}p{0.65cm}|>{\centering\arraybackslash}p{0.75cm}|>{\centering\arraybackslash}p{0.65cm}|>{\centering\arraybackslash}p{0.65cm}|}
+\hline
+\rowcolor{corpDarkHeader}
+\color{white}\textbf{\scriptsize N°} & 
+\color{white}\textbf{\scriptsize Nombre / Descripci\'on} & 
+\color{white}\textbf{\scriptsize Marca/Modelo} & 
+\color{white}\textbf{\scriptsize Cant.} & 
+\color{white}\textbf{\scriptsize P. Unit (USD)} & 
+\color{white}\textbf{\scriptsize Proveedor Sugerido} & 
+\color{white}\textbf{\scriptsize PN} & 
+\color{white}\textbf{\scriptsize PINT} & 
+\color{white}\textbf{\scriptsize SN} & 
+\color{white}\textbf{\scriptsize SIN} \\
+\hline
+\textbf{1} & Servidor Edge Gateway Nodo-X8 industrial IP67 & Nodo-X8 Dual SIM & 10 & 1,450.00 & TechLogix SpA & \textbf{X} & & & \\
+\hline
+\textbf{2} & M\'odulos Telemetr\'ia CAN-Bus VINI V4 IoT & VINI CAN-v4 & 50 & 280.00 & VINI Tech & & \textbf{X} & & \\
+\hline
+\textbf{3} & Switch L3 Óptico Datacenter 24p 10GbE SFP+ & EdgeCore AS5812 & 4 & 1,875.00 & TechLogix SpA & \textbf{X} & & & \\
+\hline
+\textbf{4} & Licencia Firmware OS Industrial Edge 2PC & EdgeOS Enterprise & 10 & 475.00 & Nodo Network & & & \textbf{X} & \\
+\hline
+\textbf{5} & Homologaci\'on \& Pruebas de Carga VPN WireGuard & SLA-24/7 Deployment & 1 & 8,000.00 & TechLogix SpA & & & & \textbf{X} \\
+\hline
+\end{tabularx}
+
+\vspace{0.2cm}
+
+\noindent
+\begin{minipage}[t]{0.48\textwidth}
+  \vspace{0.05cm}
+  {\footnotesize
+  \textbf{Claves de Clasificaci\'on T\'ecnica:}\\
+  $\bullet$ \textbf{PN}: Producto Nuevo $\bullet$ \textbf{PINT}: Producto Integrado\\
+  $\bullet$ \textbf{SN}: Servicio Nuevo $\bullet$ \textbf{SIN}: Servicio Integrado\\[4pt]
+  \textbf{Total Unidades F\'isicas:} 75 unidades de equipamiento}
 \end{minipage}\hfill
-\begin{minipage}[t]{0.35\textwidth}
-  \raggedleft
+\begin{minipage}[t]{0.48\textwidth}
   \begin{tcolorbox}[
     enhanced,
     colback=corpLightBg,
     colframe=corpBorder,
-    arc=2mm,
+    arc=1.5mm,
     boxrule=0.7pt,
     top=2mm, bottom=2mm, left=3mm, right=3mm
   ]
-    \raggedleft
-    {\scriptsize\bfseries\color{corpTextMuted}FOLIO DE EMISION}\\[1pt]
-    {\normalsize\bfseries\color{corpPrimary}OC-2026-0842-BNW}\\[2pt]
-    {\scriptsize\color{corpTextDark}Emision: \textbf{03 de Noviembre de 2026}}\\[1pt]
-    {\scriptsize\color{corpTextDark}Validez de Cotizacion: \textbf{30 Dias Habiles}}
+    \renewcommand{\arraystretch}{1.15}
+    \begin{tabularx}{\linewidth}{@{}Xr@{}}
+      {\footnotesize\textbf{Subtotal Neto (USD):}} & {\footnotesize\bfseries USD 48,750.00} \\
+      {\footnotesize Descuento Corporativo (0\%):} & {\footnotesize USD 0.00} \\
+      {\footnotesize IVA Transaccional (19\%):} & {\footnotesize USD 9,262.50} \\
+      \midrule
+      {\normalsize\bfseries\color{corpDarkHeader}TOTAL ESTIMADO (USD):} & {\normalsize\bfseries\color{corpPrimary}USD 58,012.50} \\
+    \end{tabularx}
   \end{tcolorbox}
 \end{minipage}
 
-\vspace{3mm}
-
-% Ficha Resumen de Emisión y Proveedor
-\noindent
-\begin{tabularx}{\linewidth}{@{}XX@{}}
-  % Columna Izquierda: Entidad Emisora
-  \begin{tcolorbox}[
-    enhanced,
-    colback=white,
-    colframe=corpBorder,
-    title={\small\bfseries\color{corpPrimary}DATOS DEL EMISOR / COMPRADOR},
-    colbacktitle=corpLightBg,
-    arc=1.5mm,
-    boxrule=0.6pt,
-    top=2.5mm, bottom=2.5mm, left=3.5mm, right=3.5mm
-  ]
-    {\footnotesize\renewcommand{\arraystretch}{1.2}
-    \begin{tabular}{@{}ll@{}}
-      \textbf{Razon Social:} & \corporatebrandlegal \\
-      \textbf{RUT / Tax ID:} & \corporatebrandrut \\
-      \textbf{Giro:} & \corporatebrandtagline \\
-      \textbf{Contacto:} & adquisiciones@\corporatebrand.corp \\
-      \textbf{Centro Costo:} & CC-4402 Infraestructura Critica \\
-      \textbf{Cond. Pago:} & 30 dias Factura contra Hito 2PC
-    \end{tabular}}
-  \end{tcolorbox}
-  &
-  % Columna Derecha: Datos del Proveedor Adjudicado
-  \begin{tcolorbox}[
-    enhanced,
-    colback=white,
-    colframe=corpBorder,
-    title={\small\bfseries\color{corpPrimary}DATOS DEL PROVEEDOR / BENEFICIARIO},
-    colbacktitle=corpLightBg,
-    arc=1.5mm,
-    boxrule=0.6pt,
-    top=2.5mm, bottom=2.5mm, left=3.5mm, right=3.5mm
-  ]
-    {\footnotesize\renewcommand{\arraystretch}{1.2}
-    \begin{tabular}{@{}ll@{}}
-      \textbf{Razon Social:} & TechLogix Sistemas Distribuidos SpA \\
-      \textbf{RUT Fiscal:} & 76.924.180-3 (Chile) \\
-      \textbf{RUC Ext.:} & 80094120-1 (DNIT Paraguay) \\
-      \textbf{Contacto:} & Lic. Carlos Sandoval Meneses \\
-      \textbf{Email:} & contratos@techlogix.io \\
-      \textbf{Moneda Base:} & USD (Dolar Estadounidense)
-    \end{tabular}}
-  \end{tcolorbox}
-\end{tabularx}
-
-\vspace{2mm}
-
-% Tabla de Ítems y Cotización
-\noindent{\bfseries\color{corpPrimary}\large Detalle de Suministros, Equipamiento y Servicios Asociados}
-\vspace{1.5mm}
-
-\noindent
-\begin{tabularx}{\linewidth}{@{} c p{6.9cm} c c r r @{}}
-  \toprule
-  \rowcolor{corpPrimary}
-  {\bfseries\color{white}\footnotesize Item} &
-  {\bfseries\color{white}\footnotesize Descripcion Tecnica Detallada} &
-  {\bfseries\color{white}\footnotesize Cant.} &
-  {\bfseries\color{white}\footnotesize Unidad} &
-  {\bfseries\color{white}\footnotesize P. Unit (USD)} &
-  {\bfseries\color{white}\footnotesize Subtotal (USD)} \\
-  \midrule
-  \rowcolor{corpLightBg}
-  01 & Servidor Edge Gateway Nodo-X8 industrial con gabinete rugerizado IP67, modem dual SIM 5G/LTE y modulo HSM criptografico para verificacion 2PC. & 10 & UN & 1,450.00 & 14,500.00 \\
-  02 & Modulos de Telemetria CAN-Bus VINI V4 con acelerometro de 3 ejes, sensoristica vehicular, flash protegido y firmware dual. & 50 & UN & 280.00 & 14,000.00 \\
-  \rowcolor{corpLightBg}
-  03 & Conmutador Switch L3 Optico Datacenter 24 puertos 10GbE SFP+ con fuentes de poder redundantes y soporte de sincronizacion IEEE 1588 PTP. & 4 & UN & 1,875.00 & 7,500.00 \\
-  04 & Licencia perpetua Firmware OS Industrial Edge con soporte de failover distribuido y conexion bidireccional certificada DTE/SIFEN. & 10 & LIC & 475.00 & 4,750.00 \\
-  \rowcolor{corpLightBg}
-  05 & Servicio de Homologacion, Puesta en Marcha, Pruebas de Carga y Certificacion de Enlace Seguro VPN IPsec / WireGuard redundante. & 1 & GL & 8,000.00 & 8,000.00 \\
-  \bottomrule
-\end{tabularx}
-
 \clearpage
 
-% ==================== PÁGINA 2: APROBACIONES, CONDICIONES, DESGLOSE, FIRMAS Y SELLO ====================
+% =============================================================
+% PÁGINA 2: CONDICIONES, APROBACIONES DUAL-CONTROL Y SELLOS
+% =============================================================
+
 \drawchromaticbar[3.5pt]
-\vspace{3mm}
+\vspace{0.2cm}
+
+\begin{center}
+    {\large\bfseries\color{corpDarkHeader}T\'erminos Comerciales, Aprobaci\'on Jer\'arquica \& Validaci\'on 2PC}\\[1pt]
+    {\footnotesize\color{corpTextMuted}Anexo Normativo de la Orden de Compra OC-2026-0842-BNW --- P\'agina 2 de 2}
+\end{center}
+
+\vspace{0.15cm}
 
 % Matriz de Aprobación WIT/BNW Badge
-\approvalmatrixbadge{NIVEL 3 -- GERENCIA DE OPERACIONES \& CFO}{USD 48,750.00}{Comite Ejecutivo y Directorio}
+\approvalmatrixbadge{NIVEL 3 -- GERENCIA DE OPERACIONES \& CFO}{USD 48,750.00}{Comit\'e Ejecutivo y Directorio}
 
-\vspace{3mm}
+\vspace{0.2cm}
 
-% Desglose Financiero y Cuadro de Cierre Monetario
 \noindent
-\begin{minipage}[t]{0.53\textwidth}
-  \begin{corpnote}{Terminos Comerciales y Normativa de Facturacion}
+\begin{minipage}[t]{0.52\textwidth}
+  \begin{corpnote}{T\'erminos de Suministro y Facturaci\'on Electr\'onica}
     \begin{itemize}[leftmargin=*, noitemsep, topsep=1pt]
       {\scriptsize
-      \item \textbf{Facturacion Electronica:} El proveedor debe emitir DTE electronico (Chile - SII) o factura e-Kuatia (Paraguay - DNIT SIFEN) referenciando expresamente este N° de OC.
-      \item \textbf{Plazo y Condiciones de Entrega:} Maximo 15 dias habiles en Bodega Central con recepcion conforme y Acta de Ensayos.
-      \item \textbf{Garantia y Soporte SLA:} 24 meses de garantia con reemplazo avanzado en modalidad NBD (Next Business Day) y soporte 24x7.
-      \item \textbf{Penalizaciones por Retraso:} Multa del 0.5\% diario por retraso no imputable a fuerza mayor, con tope del 15\% del monto contractual.
-      \item \textbf{Resolucion de Controversias:} Sometimiento a arbitraje ante el Centro de Arbitraje Comercial de la Camara de Comercio.}
+      \item \textbf{Facturaci\'on Electr\'onica:} El proveedor debe emitir DTE electr\'onico (Chile - SII) o factura e-Kuatia (Paraguay - DNIT SIFEN) referenciando este N° de OC.
+      \item \textbf{Plazo de Entrega:} M\'aximo 15 d\'ias h\'abiles en Bodega Central con recepci\'on conforme y Acta de Ensayos.
+      \item \textbf{Garant\'ia y SLA:} 24 meses de garant\'ia con reemplazo avanzado en modalidad NBD (Next Business Day) y soporte 24x7.
+      \item \textbf{Penalizaciones:} Multa del 0.5\% diario por retraso no justificado, con tope del 15\% del monto contractual.}
     \end{itemize}
   \end{corpnote}
 
-  \vspace{2mm}
+  \vspace{0.15cm}
 
-  \begin{corpcard}{Instrucciones de Pago \& Conciliacion Bancaria}
-    {\scriptsize\renewcommand{\arraystretch}{1.2}
+  \begin{corpcard}{Instrucciones de Pago \& Conciliaci\'on Bancaria}
+    {\scriptsize\renewcommand{\arraystretch}{1.15}
     \begin{tabular}{@{}ll@{}}
       \textbf{Banco Beneficiario:} & Banco Santander Corporate Banking \\
       \textbf{Cuenta Corriente:} & N° 00-741289-9 USD \\
-      \textbf{Codigo SWIFT / BIC:} & BSCHCLRMXXX \\
+      \textbf{C\'odigo SWIFT / BIC:} & BSCHCLRMXXX \\
       \textbf{Titular de Cuenta:} & TechLogix Sistemas Distribuidos SpA \\
-      \textbf{Notificacion Tesoreria:} & tesoreria@techlogix.io
+      \textbf{Notificaci\'on Tesorer\'ia:} & tesoreria@techlogix.io
     \end{tabular}}
   \end{corpcard}
 \end{minipage}\hfill
-\begin{minipage}[t]{0.44\textwidth}
+\begin{minipage}[t]{0.45\textwidth}
   \begin{tcolorbox}[
     enhanced,
     colback=white,
     colframe=corpBorder,
     arc=2mm,
     boxrule=0.8pt,
-    title={\small\bfseries\color{corpPrimary}LIQUIDACION FINANCIERA FINAL},
+    title={\small\bfseries\color{corpDarkHeader}EQUIVALENCIAS MULTIMONEDA},
     colbacktitle=corpLightBg,
-    top=3mm, bottom=3mm, left=4mm, right=4mm
+    top=2.5mm, bottom=2.5mm, left=3.5mm, right=3.5mm
   ]
-    \noindent\begin{tabularx}{\linewidth}{@{}Xr@{}}
-      {\footnotesize\color{corpTextDark}Subtotal Neto Equipos:} & {\footnotesize\bfseries USD 40,750.00} \\
-      {\footnotesize\color{corpTextDark}Subtotal Servicios \& Lic.:} & {\footnotesize\bfseries USD 8,000.00} \\
+    {\scriptsize\renewcommand{\arraystretch}{1.2}
+    \begin{tabularx}{\linewidth}{@{}Xr@{}}
+      \textbf{Moneda Contractual:} & \textbf{USD 58,012.50} \\
       \midrule
-      {\footnotesize\color{corpTextDark}\textbf{Subtotal Neto Acumulado:}} & {\footnotesize\bfseries USD 48,750.00} \\
-      {\footnotesize\color{corpTextDark}Descuento Corporativo (0\%):} & {\footnotesize\bfseries USD 0.00} \\
-      {\footnotesize\color{corpTextDark}IVA Transaccional (19\%):} & {\footnotesize\bfseries USD 9,262.50} \\
-      \midrule
-      {\normalsize\bfseries\color{corpPrimary}TOTAL FINAL (USD):} & {\normalsize\bfseries\color{corpTextAccent}USD 58,012.50} \\
-    \end{tabularx}
-    \vspace{2mm}
-    \hrule
-    \vspace{2mm}
-    \noindent{\scriptsize\bfseries\color{corpPrimary}Equivalencias Monetarias de Referencia:}\\[2pt]
-    \noindent\begin{tabularx}{\linewidth}{@{}Xr@{}}
-      {\scriptsize\color{corpTextMuted}Ref. Peso Chileno (CLP @ 960):} & {\scriptsize\bfseries CLP 55,692,000} \\
-      {\scriptsize\color{corpTextMuted}Ref. Guarani Regional (PYG @ 7,550):} & {\scriptsize\bfseries Gs. 437,994,375} \\
-    \end{tabularx}
+      Ref. Peso Chileno (CLP @ 960): & CLP 55,692,000 \\
+      Ref. Guaran\'i Regional (PYG @ 7,550): & Gs. 437,994,375 \\
+      Estado de Tipo de Cambio: & Fijado Spot Cierre BNW \\
+      CDC Timbrado Fiscal PY: & 19019949 (001-004) \\
+    \end{tabularx}}
   \end{tcolorbox}
 \end{minipage}
 
+\vspace{0.3cm}
+
 % Firmas Dual-Control
 \dualcontrolsignature%
-  {Ing. Sebastian Rios Alarcon}{Gerente Corporativo de Operaciones \& TI}{Unidad Ejecutora Responsable}%
-  {Dra. Claudia Miranda Valenzuela}{Vicepresidente de Finanzas \& Control}{Validacion Presupuestaria \& Cumplimiento}
+  {Iv\'an Valenzuela M.}{Chief Technology Officer (CTO)}{Unidad T\'ecnica Solicitante}%
+  {Alejandro Gonz\'alez}{Chief Executive Officer (CEO)}{Direcci\'on Ejecutiva Grupo BNW}
 
-\vspace{2mm}
+\vspace{0.25cm}
 
 % Sello Criptográfico SHA-256
 \cryptoseal%
   {f8d9b139c50c0c663b65ef35b2e04f056d6ad5584589dbe7e7210e7b998cfb62}%
-  {2026-11-03T12:35:19.412Z}%
-  {NODO-SEC-GATEWAY-AUTH-HASH-SHA256}
+  {2026-11-04T01:52:00.000Z}%
+  {BNW-TRUST-NET-AUTH-2PC-VERIFIED}
 
 \end{document}

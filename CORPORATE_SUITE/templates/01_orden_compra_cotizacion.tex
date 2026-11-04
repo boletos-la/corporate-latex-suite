@@ -28,12 +28,16 @@
 % =============================================================
 
 \begin{center}
-    \IfFileExists{\corporatebrandlogo}{%
-        \includegraphics[height=1.25cm,keepaspectratio]{\corporatebrandlogo}\\[0.15cm]
+    \IfFileExists{\corporatebrandlogolight}{%
+        \includegraphics[height=1.25cm,keepaspectratio]{\corporatebrandlogolight}\\[0.15cm]
     }{%
-        {\LARGE\bfseries\color{corpPrimary}\corporatebrandname}\\[0.15cm]
+        \IfFileExists{\corporatebrandlogo}{%
+            \includegraphics[height=1.25cm,keepaspectratio]{\corporatebrandlogo}\\[0.15cm]
+        }{%
+            {\LARGE\bfseries\color{corpDarkHeader}\corporatebrandname}\\[0.15cm]
+        }%
     }%
-    {\LARGE\bfseries\color{corpPrimary}Formulario de Orden de Compra \& Solicitud de Adquisiciones}\\[0.05cm]
+    {\LARGE\bfseries\color{corpDarkHeader}Formulario de Orden de Compra \& Solicitud de Adquisiciones}\\[0.05cm]
     {\footnotesize\color{corpTextMuted}\corporatebrandlegal\ --- \corporatebrandtagline\ --- P\'agina 1 de 2: \'Items Requeridos}
 \end{center}
 
@@ -49,7 +53,8 @@
 \end{tabular}
 
 \vspace{0.15cm}
-\noindent{\color{corpPrimary}\rule{\textwidth}{1.8pt}}
+\noindent{\color{corpDarkHeader}\rule{\textwidth}{1.5pt}}\\[-0.12cm]
+\noindent{\color{corpPrimary}\rule{\textwidth}{0.8pt}}
 \vspace{0.1cm}
 
 \noindent{\textbf{\small DATOS DEL SOLICITANTE / CENTRO DE COSTO RESPONSABLE}}\\[0.1cm]
@@ -73,7 +78,7 @@ Condici\'on de Pago: & 30 d\'ias Factura electr\'onica contra Hito 2PC Verificad
 \noindent
 \begin{tabularx}{\textwidth}{|>{\centering\arraybackslash}p{0.55cm}|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}p{2.6cm}|>{\centering\arraybackslash}p{1.0cm}|>{\raggedleft\arraybackslash}p{2.1cm}|>{\raggedright\arraybackslash}p{2.9cm}|>{\centering\arraybackslash}p{0.65cm}|>{\centering\arraybackslash}p{0.75cm}|>{\centering\arraybackslash}p{0.65cm}|>{\centering\arraybackslash}p{0.65cm}|}
 \hline
-\rowcolor{corpPrimary}
+\rowcolor{corpDarkHeader}
 \color{white}\textbf{\scriptsize N°} & 
 \color{white}\textbf{\scriptsize Nombre / Descripci\'on} & 
 \color{white}\textbf{\scriptsize Marca/Modelo} & 
@@ -123,7 +128,7 @@ Condici\'on de Pago: & 30 d\'ias Factura electr\'onica contra Hito 2PC Verificad
       {\footnotesize Descuento Corporativo (0\%):} & {\footnotesize USD 0.00} \\
       {\footnotesize IVA Transaccional (19\%):} & {\footnotesize USD 9,262.50} \\
       \midrule
-      {\normalsize\bfseries\color{corpPrimary}TOTAL ESTIMADO (USD):} & {\normalsize\bfseries\color{corpTextAccent}USD 58,012.50} \\
+      {\normalsize\bfseries\color{corpDarkHeader}TOTAL ESTIMADO (USD):} & {\normalsize\bfseries\color{corpPrimary}USD 58,012.50} \\
     \end{tabularx}
   \end{tcolorbox}
 \end{minipage}
@@ -138,7 +143,7 @@ Condici\'on de Pago: & 30 d\'ias Factura electr\'onica contra Hito 2PC Verificad
 \vspace{0.2cm}
 
 \begin{center}
-    {\large\bfseries\color{corpPrimary}T\'erminos Comerciales, Aprobaci\'on Jer\'arquica \& Validaci\'on 2PC}\\[1pt]
+    {\large\bfseries\color{corpDarkHeader}T\'erminos Comerciales, Aprobaci\'on Jer\'arquica \& Validaci\'on 2PC}\\[1pt]
     {\footnotesize\color{corpTextMuted}Anexo Normativo de la Orden de Compra OC-2026-0842-BNW --- P\'agina 2 de 2}
 \end{center}
 
@@ -181,7 +186,7 @@ Condici\'on de Pago: & 30 d\'ias Factura electr\'onica contra Hito 2PC Verificad
     colframe=corpBorder,
     arc=2mm,
     boxrule=0.8pt,
-    title={\small\bfseries\color{corpPrimary}EQUIVALENCIAS MULTIMONEDA},
+    title={\small\bfseries\color{corpDarkHeader}EQUIVALENCIAS MULTIMONEDA},
     colbacktitle=corpLightBg,
     top=2.5mm, bottom=2.5mm, left=3.5mm, right=3.5mm
   ]
