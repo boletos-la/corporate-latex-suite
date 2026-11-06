@@ -13,7 +13,10 @@ import argparse
 import subprocess
 import shutil
 import re
+import logging
 from pathlib import Path
+
+logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
 
 # Enforce UTF-8 in stdio
 if sys.platform == "win32":
@@ -45,16 +48,12 @@ def find_suite_dir(candidate_path=None) -> Path:
             return p
         raise FileNotFoundError(f"Custom suite path invalid or missing core/agy-corporate-brand.sty: {candidate_path}")
 
-    # Standard default paths
-    candidates = [
-        Path("C:/Users/ivanv/Templates Latex/CORPORATE_SUITE"),
-        Path(__file__).resolve().parent.parent.parent.parent / "Templates Latex" / "CORPORATE_SUITE"
-    ]
-    for c in candidates:
-        if c.exists() and (c / "core" / "agy-corporate-brand.sty").exists():
-            return c.resolve()
+    # Estandar: relativo al directorio del script
+    script_dir = Path(__file__).resolve().parent.parent
+    if (script_dir / "core" / "agy-corporate-brand.sty").exists():
+        return script_dir
 
-    raise FileNotFoundError("Could not locate CORPORATE_SUITE directory with core/agy-corporate-brand.sty")
+    raise FileNotFoundError("Could not locate the suite directory with core/agy-corporate-brand.sty")
 
 
 def generate_document(brand: str, doc_type: str, title: str, output_path: str,
@@ -134,8 +133,8 @@ def generate_document(brand: str, doc_type: str, title: str, output_path: str,
     if brand_sty_src.exists() and not brand_sty_dest.exists():
         try:
             shutil.copy(brand_sty_src, brand_sty_dest)
-        except Exception:
-            pass
+        except Exception as e:
+            logging.warning(f"Could not copy agy-corporate-brand.sty to work_dir: {e}")
 
     with open(tmp_tex, "w", encoding="utf-8") as f:
         f.write(tex_content)
@@ -161,12 +160,13 @@ def generate_document(brand: str, doc_type: str, title: str, output_path: str,
             env=env,
             timeout=120
         )
-        if res.returncode != 0 and pass_num == 2:
+        if res.returncode != 0:
+            # Si falla en la primera pasada, abortar. No hay necesidad de reintentar.
             return {
                 "success": False,
                 "brand": brand,
                 "type": doc_type,
-                "error": f"pdflatex compilation failed (code {res.returncode}):\n{res.stdout[-1500:]}"
+                "error": f"pdflatex compilation failed on pass {pass_num} (code {res.returncode}):\n{res.stdout[-1500:]}"
             }
 
     if not final_pdf.exists():
@@ -192,8 +192,8 @@ def generate_document(brand: str, doc_type: str, title: str, output_path: str,
         if aux.exists():
             try:
                 aux.unlink()
-            except Exception:
-                pass
+            except Exception as e:
+                logging.debug(f"Failed to delete intermediate file {aux}: {e}")
 
     return {
         "success": True,
@@ -233,15 +233,15 @@ def main():
             suite_dir=suite
         )
         if res["success"]:
-            print(f"[SUCCESS] Document generated: {res['output_file']}")
+            logging.info(f"Document generated: {res['output_file']}")
             if res.get("size_bytes"):
-                print(f"[SIZE] {res['size_bytes'] / 1024.0:.1f} KB")
+                logging.info(f"Size: {res['size_bytes'] / 1024.0:.1f} KB")
             sys.exit(0)
         else:
-            print(f"[ERROR] {res.get('error')}", file=sys.stderr)
+            logging.error(res.get('error'))
             sys.exit(1)
     except Exception as e:
-        print(f"[EXCEPTION] {e}", file=sys.stderr)
+        logging.exception("Exception occurred during document generation")
         sys.exit(1)
 
 
