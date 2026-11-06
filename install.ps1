@@ -1,4 +1,5 @@
 # PowerShell Installer for corporate-latex-plugin
+$ErrorActionPreference = "Stop"
 Write-Host "=================================================================" -ForegroundColor Cyan
 Write-Host "  Antigravity Corporate LaTeX Suite & Plugin Installer (PS5/PS7)" -ForegroundColor Cyan
 Write-Host "=================================================================" -ForegroundColor Cyan
@@ -21,10 +22,15 @@ foreach ($folder in @(".gemini-plugin", "skills", "scripts", "tests")) {
 
 Write-Host "`n[2/3] Checking pdflatex..." -ForegroundColor Yellow
 try {
-    $latexVer = pdflatex --version
-    Write-Host "  [OK] pdflatex is installed." -ForegroundColor Green
+    $pdflatexCmd = Get-Command pdflatex -ErrorAction SilentlyContinue
+    if ($pdflatexCmd) {
+        $latexVer = pdflatex --version
+        Write-Host "  [OK] pdflatex is installed." -ForegroundColor Green
+    } else {
+        Write-Host "  [WARN] pdflatex not found in PATH." -ForegroundColor DarkYellow
+    }
 } catch {
-    Write-Host "  [WARN] pdflatex not found in PATH." -ForegroundColor DarkYellow
+    Write-Host "  [WARN] Check for pdflatex encountered an error: $_" -ForegroundColor DarkYellow
 }
 
 Write-Host "`n[3/3] Installation Complete! The skill 'corporate-latex' is now active." -ForegroundColor Green

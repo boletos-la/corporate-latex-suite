@@ -8,6 +8,7 @@ import unittest
 from unittest.mock import patch, MagicMock
 from pathlib import Path
 import sys
+import tempfile
 
 scripts_dir = Path(__file__).resolve().parent.parent / "scripts"
 if str(scripts_dir) not in sys.path:
@@ -25,17 +26,13 @@ from generate_corporate_doc import (
 class TestGenerateCorporateDoc(unittest.TestCase):
 
     @classmethod
+    def setUpClass(cls):
+        cls.temp_dir = tempfile.TemporaryDirectory()
+        cls.temp_path = Path(cls.temp_dir.name)
+
+    @classmethod
     def tearDownClass(cls):
-        try:
-            suite = find_suite_dir()
-            showcase = suite / "compiled_showcase"
-            for f in showcase.glob("_test*"):
-                try:
-                    f.unlink()
-                except Exception:
-                    pass
-        except Exception:
-            pass
+        cls.temp_dir.cleanup()
 
     def test_valid_brands_and_types(self):
         self.assertEqual(len(VALID_BRANDS), 5)
@@ -59,7 +56,7 @@ class TestGenerateCorporateDoc(unittest.TestCase):
 
     def test_generate_tex_all_types(self):
         suite = find_suite_dir()
-        out_dir = suite / "compiled_showcase"
+        out_dir = self.temp_path
         for t in TYPE_TO_TEMPLATE.keys():
             out_file = out_dir / f"_test_{t}.tex"
             res = generate_document(
@@ -82,9 +79,23 @@ class TestGenerateCorporateDoc(unittest.TestCase):
         with self.assertRaises(FileNotFoundError):
             find_suite_dir("C:/NonExistentPath/12345")
 
-    def test_compile_pdf_integration(self):
+    @patch("subprocess.run")
+    def test_compile_pdf_integration(self, mock_run):
+        # Evita ejecutar pdflatex real si no existe en el sistema donde corre el test
+        fake_process = MagicMock()
+        fake_process.returncode = 0
+        mock_run.returncode = 0
+
         suite = find_suite_dir()
-        out_pdf = suite / "compiled_showcase" / "_test_oc_compile.pdf"
+        out_pdf = self.temp_path / "_test_oc_compile.pdf"
+
+        def fake_subprocess_run(*args, **kwargs):
+            # Simulamos que pdflatex creó el archivo de salida
+            out_pdf.write_bytes(b"%PDF-1.4 dummy valid file with enough size\n" + b"0" * 30000)
+            return fake_process
+
+        mock_run.side_effect = fake_subprocess_run
+
         res = generate_document(
             brand="boletos",
             doc_type="oc",
@@ -106,7 +117,7 @@ class TestGenerateCorporateDoc(unittest.TestCase):
         self.assertEqual(suite, found)
 
     def test_generate_document_default_suite_dir(self):
-        out_file = Path("C:/Users/ivanv/Templates Latex/CORPORATE_SUITE/compiled_showcase/_test_default_suite.tex")
+        out_file = self.temp_path / "_test_default_suite.tex"
         res = generate_document(
             brand="vini",
             doc_type="memo",
@@ -119,7 +130,7 @@ class TestGenerateCorporateDoc(unittest.TestCase):
             out_file.unlink()
 
     def test_missing_template_raises(self):
-        suite = Path("C:/Users/ivanv/Templates Latex/CORPORATE_SUITE/compiled_showcase")
+        suite = self.temp_path
         with self.assertRaises(FileNotFoundError):
             generate_document("bnw", "oc", "Title", "out.tex", compile_pdf=False, suite_dir=suite)
 
@@ -132,7 +143,7 @@ class TestGenerateCorporateDoc(unittest.TestCase):
 
         # Test main with --no-compile
         suite = find_suite_dir()
-        test_out = suite / "compiled_showcase" / "_test_cli_main.tex"
+        test_out = self.temp_path / "_test_cli_main.tex"
         sys.argv = [
             "generate_corporate_doc.py",
             "--brand", "wit",
@@ -183,7 +194,7 @@ class TestGenerateCorporateDoc(unittest.TestCase):
 
     def test_pdflatex_compilation_failure_handling(self):
         suite = find_suite_dir()
-        out_pdf = suite / "compiled_showcase" / "_test_fail.pdf"
+        out_pdf = self.temp_path / "_test_fail.pdf"
         fake_process = MagicMock()
         fake_process.returncode = 1
         fake_process.stdout = "Fatal LaTeX error: Missing \\begin{document}"
@@ -201,7 +212,7 @@ class TestGenerateCorporateDoc(unittest.TestCase):
 
     def test_pdf_missing_or_undersized(self):
         suite = find_suite_dir()
-        out_pdf = suite / "compiled_showcase" / "_test_size.pdf"
+        out_pdf = self.temp_path / "_test_size.pdf"
         fake_process = MagicMock()
         fake_process.returncode = 0
 
